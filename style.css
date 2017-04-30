@@ -84,7 +84,7 @@ h1 {
 	padding: 3em 0.5em;
 }
 main {
-	background: url('background.png') no-repeat fixed;
+	background: url('img/background.png') no-repeat fixed;
 	background-position-y: 100px;
 	padding-top: 50px;
 	transform: translateY(-50px);
