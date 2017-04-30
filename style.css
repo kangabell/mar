@@ -9,18 +9,6 @@
 */
 
 @font-face {
-	font-family: 'FreightDisp Pro';
-	src: url("fonts/FreigDisProBooItaWeb.eot");
-	font-style: italic;
-}
-
-@font-face {
-	font-family: 'FreightDisp Pro';
-	src: url("fonts/FreigDisProBooItaWeb.woff") format("woff");
-	font-style: italic;
-}
-
-@font-face {
 	font-family: 'Aktiv';
 	src: url('fonts/Aktiv_Rg.ttf');
 }
