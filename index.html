@@ -1,15 +1,42 @@
 <!DOCTYPE html>
+<!--
+
+===============================
+=  =====  =====  =====       ==
+=   ===   ====    ====  ====  =
+=  =   =  ===  ==  ===  ====  =
+=  == ==  ==  ====  ==  ===   =
+=  =====  ==  ====  ==      ===
+=  =====  ==        ==  ====  =
+=  =====  ==  ====  ==  ====  =
+=  =====  ==  ====  ==  ====  =
+=  =====  ==  ====  ==  ====  =
+===============================
+
+site by kay belardinelli.
+
+-->
 <html>
 
 <head>
+
 	<title>MAR &mdash; providence, RI</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Two-piece doom metal band from Providence, Rhode Island">
+
 	<style type="text/css">
 
 		/*** COLORS ***/
 		/*
-			#f1f1f1 white
+			#edeae6 white
+			#dedbd6 warm light
 			#dce8e6 light
 			#424c49 medium
+			#76939e blue
+			#6e9eb1 blue bright
 			#485456 green
 			#303936 dark
 			#070e0d black
@@ -17,125 +44,317 @@
 
 		@font-face {
 			font-family: 'FreightDisp Pro';
-			src: url("fonts/Freight/FreigDisProLigItaWeb.eot");
+			src: url("fonts/FreigDisProBooItaWeb.eot");
 			font-style: italic;
 		}
 
 		@font-face {
 			font-family: 'FreightDisp Pro';
-			src: url("fonts/Freight/FreigDisProLigItaWeb.woff") format("woff");
+			src: url("fonts/FreigDisProBooItaWeb.woff") format("woff");
 			font-style: italic;
 		}
 
 		@font-face {
 			font-family: 'Aktiv';
-			src: url('fonts/Aktiv/Aktiv_Rg.ttf');
+			src: url('fonts/Aktiv_Rg.ttf');
 		}
 		@font-face {
 			font-family: 'Aktiv';
-			src: url('fonts/Aktiv/Aktiv_Bd.ttf');
+			src: url('fonts/Aktiv_Bd.ttf');
 			font-weight: bold;
 		}
 
 		body {
-			background: #f1f1f1;
+			background: #edeae6;
 			color: #303936;
 			font-family: 'Aktiv', sans-serif;
 			font-size: 14px;
 			letter-spacing: 0.025em;
+			line-height: 1.5em;
 			padding: 0;
 			margin: 0;
 			text-transform: uppercase;
 		}
 		a {
 			color: #424c49;
-			border-bottom: 1px solid transparent;
+			border-bottom: 1px solid #6e9eb1;
 			text-decoration: none;
-			transition: border-color 0.25s ease;
+			transition: border-color 0.125s ease;
 		}
 		a:hover {
 			border-color: #424c49;
 		}
 		h1 {
-			font-size: 4.5em;
+			font-size: 8.5em;
+			line-height: 1.025em;
 			margin-bottom: 0;
 		}
-		p {
-			margin-top: 0;
-		}
 		header {
-			background: url('img/banner.jpg') #303936;
+			background: url('banner.jpg') #303936;
 			background-size: cover;
-			border-bottom: 1em solid #070e0d;
-			color: #f1f1f1;
+			border-bottom: 0.5em solid #070e0d;
+			color: #dedbd6;
 			text-align: center;
-			padding: 2em 1.5em;
+			padding: 0.5em 1.5em 4em;
 		}
 		.subheading {
 			font-family: 'FreightDisp Pro', 'Times New Roman', Times, serif;
-			font-size: 1.5em;
+			font-size: 1.125em;
 			font-style: italic;
 			font-weight: 200;
 			letter-spacing: 0.075em;
+			margin: 0 auto;
 		}
 		main {
-			min-height: 10em;
-			padding: 3em 1em;
-			text-align: center;
-		}
-		.wrap {
 			margin-left: auto;
 			margin-right: auto;
-			max-width: 70em;
+			max-width: 74em;
+			min-height: 10em;
+			padding: 3em 0.5em;
+		}
+		article {
+			max-width: 600px;
+			margin-left: auto;
+			margin-right: auto;
 		}
 		img {
 			display: block;
 			margin: 2em auto;
-			max-width: 30em;
 			width: 100%;
 			text-align: center;
 		}
-		footer {
-			background: #485456;
-			color: #f1f1f1;
-			padding: 0.5em 0.25em;
+		img.small {
+			max-width: 12rem;
+			height: auto;
 		}
-		footer .info:after { /* clearfix */
-			clear: both;
-			content: '';
-			display: table;
+		img[src$='.gif'] {
+			max-width: 30em;
 		}
-		footer a {
-			color: #dce8e6;
+		figure img {
+			margin-bottom: 0.5em;
 		}
-		footer .contact {
-			float: left;
+		figcaption {
+			text-align: left;
 		}
-		footer .links {
-			float: right;
+		small, figcaption {
+			font-size: 0.75em;
+		}
+		iframe {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		iframe.bandcamp, iframe.soundcloud {
+			width: 100%;
+		}
+		iframe.bandcamp {
+			margin-bottom: 0.5em;
+		}
+		.videowrapper {
+		    float: none;
+		    clear: both;
+		    width: 100%;
+		    position: relative;
+		    padding-bottom: 56.25%;
+		    padding-top: 25px;
+		    margin-bottom: $padding/2;
+		    height: 0;
+		}
+		.videowrapper iframe {
+	        position: absolute;
+	        top: 0;
+	        left: 0;
+	        width: 100%;
+	        height: 100%;
+	    }
+		section {
+			margin-bottom: 4em;
+		}
+		section + section {
+			border-top: 1px solid #76939e;
+			padding-top: 2em;
+		}
+		.details br {
+			margin: 0.75em;
+		}
+		article:not(:first-of-type) {
+			margin-top: 5em;
+		}
+		article .heading br {
+			margin: 0.75em;
+		}
+		blockquote {
+			max-width: 620px;
+			position: relative;
+			text-transform: none;
+			text-align: left;
+		}
+		blockquote:before {
+			content: '\201C';
+			font-family: 'FreightDisp Pro', 'Times New Roman', Times, serif;
+			font-size: 3em;
+			color: gray;
+			left: -0.75em;
+			top: -0.25em;
+			position: absolute;
+		}
+		@media all and (min-width: 720px) {
+			article {
+				margin-left: 0;
+			}
+			blockquote {
+				margin: 0 auto;
+			}
+			section.shows, section.details {
+				float: right;
+				width: 34%;
+			}
+			section.news {
+				border-top: none;
+				float: left;
+				padding-top: 0;
+				width: 64%;
+			}
 		}
 
 	</style>
 </head>
 
 <body>
+
 	<header>
+
 		<h1>Mar</h1>
-		<p class="subheading">Providence, RI</p>
+
+		<p class="subheading">Raw Doom of Psychic Survival</p>
+
 	</header>
-	<main class="wrap">
-		<p>Raw doom punk / Trauma and psychic survival.</p>
-		<img src="img/portrait.jpg">
-	</main>
-	<footer>
-		<div class="info wrap">
-			<p class="contact">P.O. Box 23285, Providence RI 02903 | mar at bearhome dot net</p>
-			<p class="links">
-				<a href="http://soundcloud.com/marpvd">Soundcloud</a>
-				<!-- <a href="http://m-a-r.bandcamp.com">Bandcamp</a> -->
+
+	<main>
+
+		<section class="shows">
+			<h2>Upcoming Shows</h2>
+
+			<p>
+				<strike><strong>Sun, April 16 2017</strong> &#151; <a href="https://divseries.bandcamp.com/album/frkse-rode-a-horse-made-of-china">FRKSE</a> / <a href="https://tovarish.bandcamp.com/">Tovarish</a> / Mariassunta (Kay's solo project) @ Dusk, Providence RI &#151; 21+ &#151; 8:30/9pm &#151; $6</strike>
 			</p>
-		</div>
-	</footer>
+			<p>
+				<strong>July 2 2017</strong> &#151; <a href="https://haramharam.bandcamp.com/">Haram</a> / Pandemix / Mar @ Providence RI
+			</p>
+			<p>
+				<strong>July 19 2017</strong> &#151; <a href="https://xylitolband.bandcamp.com/">Xylitol</a> / Mar @ Providence RI
+			</p>
+		</section>
+			
+
+		<section class="news">
+
+			<h2>News</h2>
+
+
+			<article>
+				<p class="heading">
+					<strong>March 15, 2017</strong>
+				</p>
+				<p>
+					Thank you to <a href="https://thinktanknoise.bandcamp.com/">Think Tank</a> and <a href="https://theoraclema.bandcamp.com/">The Oracle</a> for a beautiful show last weekend!
+				</p>
+				<figure><a href="mar-at-mwm-march2017.jpg">
+					<img src="mar-at-mwm-march2017.jpg" alt="Mar at Machines With Magnets, March 2017" />
+					<figcaption>[click to enlarge]</figcaption>
+				</a></figure>
+			</article>
+
+			<article>
+				<p class="heading">
+					<strong>February 17, 2017</strong>
+				</p>
+				<p>
+					in case you missed our last show...
+				</p>
+				<img src="erik-head.gif" alt="Erik headbanging" />
+				<img src="kay-drums.gif" alt="Kay drumming" />
+			</article>
+
+			<article>
+				<p class="heading">
+					<strong>February 2, 2017</strong>
+				</p>
+				<p>
+					This Friday (tomorrow!) <a href="https://daily.bandcamp.com/2017/01/31/bandcamp-human-rights/">100% of Bandcamp's proceeds from sales will be donated to the ACLU</a>, in support of their efforts to combat the disgusting racist policies put into place by President Trump.
+				</p>
+			</article>
+
+			<article>
+				<p class="heading">
+					<strong>January 23, 2017</strong>
+				</p>
+				<iframe class="soundcloud" height="120" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/304193541&amp;color=76939e&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;"></iframe>
+			</article>
+	
+
+			<article>
+				<p class="heading">
+					<strong>September 28, 2016</strong>
+				</p>
+				<div class="videowrapper">
+					<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UBhxTJV3Sd4?rel=0" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</article>
+
+			<article>
+				<p class="heading">
+					<strong>September 19, 2016</strong>
+				</p>
+
+				<blockquote>
+					Mar released one of my all time favorite demos in 2015. <em>Trust In Nothing</em> is their first full length of soul crushing doom. The two piece focus on slooooooooow and raw doom that has a nice punk feel to it. The lyrics are emotional and deal with heavy issues ("These lines aren't cuts, they're my map"). Honestly, my words can't do justice at how good Mar is. I completely adore this band and their music. If you like doom that is slow and heavy, pick this up.
+				</blockquote>
+				<p>- Nathan Sizemore @ <a href="https://xtapolapometal.wordpress.com/2016/09/19/review-round-up/">xtapolapometal</a></p>
+			</article>
+
+			<article>
+				<p class="heading">
+					<strong>August 15, 2016</strong><br/>
+					New album <em>Trust in Nothing</em> out now!<br/>
+				</p>
+
+				<iframe class="bandcamp" style="border: 0; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=2917446271/size=large/bgcol=303936/linkcol=76939e/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://m-a-r.bandcamp.com/album/trust-in-nothing">Trust in Nothing by Mar</a></iframe>
+
+				<p>
+					For sale online:<br/>
+					<a href="http://m-a-r.bandcamp.com">Bandcamp</a> &amp; <a href="http://deadtankrecords.com/products/mar-trust-in-nothing-tape">Dead Tank</a>
+				</p>
+				<p>
+					and in real life:<br/>
+						<a href="http://armageddonshop.com/">Armageddon (BOS + PVD)</a> &amp; <a href="https://www.facebook.com/pages/Analog-Underground/133108133367327">Analog Underground (PVD)</a>
+						&amp; <a href="https://www.yelp.com/biz/music-research-library-providence">MRL (PVD)</a>
+				</p>
+			</article>
+
+	<!-- 		<article>
+				<p class="heading">
+					<strong>June 20, 2016</strong>
+				</p>
+				<iframe class="soundcloud" height="120" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/270072396&amp;color=76939e&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+			</article> -->
+
+		</section> <!-- end .news -->
+
+		<section class="details">
+
+			<h2>Info</h2>
+
+			<p>info at mar pvd dot com</p>
+			<p>P.O. Box 23285, Providence RI 02903</p>
+			<p><a href="http://m-a-r.bandcamp.com">Bandcamp</a></p>
+			<p><a href="http://soundcloud.com/marpvd">Soundcloud</a></p>
+			<p><a href="http://kaybelardinelli.com">Kay Belardinelli</a></p>
+			<p><a href="http://plastic-idolatry.com/erik/">Eir&#237;kr &#197;sheim</a></p>
+
+		</section>
+
+	</main>
+
 </body>
 
 </html>
