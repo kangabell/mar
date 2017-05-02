@@ -52,7 +52,7 @@ strong {
 ul {
 	padding-left: 1rem;
 }
-header {
+header, footer {
 	background-color: #f2f4eb;
 	padding: 0.5rem;
 }
@@ -70,6 +70,13 @@ h1 {
 	min-height: 10em;
 	padding: 3em 0.5em;
 }
+.wrapper:before, .wrapper:after {
+	content: '';
+	display: table;
+}
+.wrapper:after {
+	clear: both;
+}
 main {
 	background: url('img/background.png') no-repeat fixed;
 	background-position: 30% 50px;
@@ -78,13 +85,6 @@ main {
 	position: absolute;
 	top: 50px;
 	width: 100%;
-}
-main:before, main:after {
-	content: '';
-	display: table;
-}
-main:after {
-	clear: both;
 }
 article {
 	max-width: 600px;
