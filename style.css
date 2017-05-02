@@ -46,7 +46,6 @@ a:hover {
 	border-color: #424c49;
 }
 strong {
-	font-weight: normal;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 }
@@ -55,7 +54,7 @@ ul {
 }
 header {
 	background-color: #f2f4eb;
-	padding: 0.5em 1.5em;
+	padding: 0.5rem;
 }
 h1 {
 	margin: 0;
@@ -73,9 +72,12 @@ h1 {
 }
 main {
 	background: url('img/background.png') no-repeat fixed;
-	background-position-y: 100px;
+	background-position: 30% 50px;
+	background-size: cover;
 	padding-top: 50px;
-	transform: translateY(-50px);
+	position: absolute;
+	top: 50px;
+	width: 100%;
 }
 main:before, main:after {
 	content: '';
@@ -173,5 +175,11 @@ blockquote {
 		float: left;
 		padding-top: 0;
 		width: 64%;
+	}
+}
+
+@media all and (min-width: 1280px) {
+	header {
+		padding-left: 11%;
 	}
 }
