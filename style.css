@@ -145,6 +145,10 @@ section {
 	margin-bottom: 1em;
 	padding: 1em;
 }
+section h3 {
+	border-top: 2px solid #dedbd6;
+	padding-top: 1rem;
+}
 article:not(:first-of-type) {
 	margin-top: 5em;
 }
@@ -171,7 +175,6 @@ blockquote {
 		width: 34%;
 	}
 	section.news {
-		border-top: none;
 		float: left;
 		padding-top: 0;
 		width: 64%;
