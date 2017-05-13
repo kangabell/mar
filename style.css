@@ -3,7 +3,7 @@
 /*
 	#edeae6 white
 	#f2f4eb cream
-	#dedbd6 gray
+	#dedbd6 light gray
 	#76939e blue
 	#303936 light black
 */
@@ -42,14 +42,24 @@ nav a {
 	margin-left: 1rem;
 }
 main {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 44rem;
 	min-height: 20rem;
 	padding: 3rem 0.5rem;
+	text-align: center;
 }
 section {
 	margin-bottom: 3rem;
 }
 p {
+	margin-left: auto;
+	margin-right: auto;
 	max-width: 38rem;
+}
+ul{
+	margin-left: auto;
+	margin-right: auto;
 }
 main img {
 	display: block;
@@ -91,6 +101,7 @@ h1, h2, h3, h4 {
 	margin-top: 0;
 	text-transform: uppercase;
 }
+
 a {
 	text-decoration: none;
 	transition: all 0.125s ease;
@@ -102,6 +113,13 @@ nav a, footer a {
 nav a:hover, footer a:hover {
 	color: #424c49;
 }
+a.current {
+	color: #979892;
+	cursor: default;
+}
+a.current:hover {
+	color: #979892;
+}
 main a {
 	color: #424c49;
 	border-bottom: 1px solid #6e9eb1;
@@ -109,6 +127,7 @@ main a {
 main a:hover {
 	border-color: #424c49;
 }
+
 ul {
 	list-style: none;
 	margin-left: 0;
@@ -188,21 +207,3 @@ iframe.bandcamp {
     height: 100%;
 }
 
-
-/*** PAGE-SPECIFIC ***/
-
-body.index main {
-	text-align: center;
-}
-body.index p {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-body.discog main {
-	text-align: center;
-}
-body.discog ul, body.discog p {
-	margin-left: auto;
-	margin-right: auto;
-}

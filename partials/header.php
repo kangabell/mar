@@ -38,10 +38,10 @@ site by kay belardinelli.
 		<h1><a href="index.php"><img src="img/logo.png" alt="Mar" class="logo" /></a></h1>
 
 		<nav>
-			<a href="index.php">Shows</a>
-			<a href="info.php">Info</a>
-			<a href="media.php">Media</a>
-			<a href="discog.php">Discography</a>
+			<a href="index.php" <?php if ( (basename($_SERVER['PHP_SELF'],'.php')) == 'index' ) : ?> class="current" <?php endif; ?>>Shows</a>
+			<a href="info.php" <?php if ( (basename($_SERVER['PHP_SELF'],'.php')) == 'info' ) : ?> class="current" <?php endif; ?>>Info</a>
+			<a href="media.php" <?php if ( (basename($_SERVER['PHP_SELF'],'.php')) == 'media' ) : ?> class="current" <?php endif; ?>>Media</a>
+			<a href="discog.php" <?php if ( (basename($_SERVER['PHP_SELF'],'.php')) == 'discog' ) : ?> class="current" <?php endif; ?>>Discography</a>
 		</nav>
 
 	</header>
