@@ -31,15 +31,16 @@ site by kay belardinelli.
 
 </head>
 
-<body>
+<body class="<?php echo basename($_SERVER['PHP_SELF'],'.php') ?>">
 
 	<header>
 
 		<h1><a href="index.php"><img src="img/logo.png" alt="Mar" class="logo" /></a></h1>
 
 		<nav>
+			<a href="index.php">Shows</a>
 			<a href="info.php">Info</a>
-			<a href="media.php">Audio/Video</a>
+			<a href="media.php">Media</a>
 		</nav>
 
 	</header>

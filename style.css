@@ -11,24 +11,35 @@
 /*** LAYOUT ***/
 
 body {
+	background-color: #fafbf7;
 	padding: 0;
-	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 68rem;
 }
 * {
 	box-sizing: border-box;
 }
 
 header, footer {
-	padding: 0.5rem;
+	padding: 1rem 0;
 }
-
+header:before, header:after {
+	content: '';
+	display: table;
+}
+header:after {
+	clear: both;
+}
+.logo {
+	float: left;
+}
 nav {
 	float: right;
+	line-height: 3rem;
 }
-body {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 68rem;
+nav a {
+	margin-left: 1rem;
 }
 main {
 	min-height: 20rem;
@@ -36,6 +47,9 @@ main {
 }
 section {
 	margin-bottom: 3rem;
+}
+p {
+	max-width: 38rem;
 }
 main img {
 	display: block;
@@ -63,37 +77,36 @@ footer a {
 
 /*** TYPOGRAPHY ***/
 
-@font-face {
-	font-family: 'Aktiv';
-	src: url('fonts/Aktiv_Rg.ttf');
-}
-@font-face {
-	font-family: 'Aktiv';
-	src: url('fonts/Aktiv_Bd.ttf');
-	font-weight: bold;
-}
-
 body {
 	color: #303936;
-	font-family: 'Aktiv', sans-serif;
+	font-family: Optima, 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 14px;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.025em;
 	line-height: 1.5em;
 }
 
 h1, h2, h3, h4 {
 	font-weight: normal;
-	letter-spacing: 0.025em;
+	letter-spacing: 0.05em;
 	margin-top: 0;
 	text-transform: uppercase;
 }
 a {
+	text-decoration: none;
+	transition: all 0.125s ease;
+}
+nav a, footer a {
+	color: #6e9eb1;
+	text-transform: uppercase;
+}
+nav a:hover, footer a:hover {
+	color: #424c49;
+}
+main a {
 	color: #424c49;
 	border-bottom: 1px solid #6e9eb1;
-	text-decoration: none;
-	transition: border-color 0.125s ease;
 }
-a:hover {
+main a:hover {
 	border-color: #424c49;
 }
 ul {
@@ -123,11 +136,15 @@ blockquote {
 	text-align: left;
 }
 
+footer {
+	font-size: 0.75rem;
+}
+
 /*** MEDIA ***/
 
 .logo {
-	opacity: 0.75;
-	width: 201px;
+	opacity: 0.8;
+	width: 120px;
 }
 iframe {
 	margin-left: auto;
@@ -155,4 +172,16 @@ iframe.bandcamp {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+
+/*** PAGE-SPECIFIC ***/
+
+body.index main {
+	text-align: center;
+}
+
+body.index p {
+	margin-left: auto;
+	margin-right: auto;
 }
