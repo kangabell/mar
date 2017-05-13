@@ -41,6 +41,7 @@ site by kay belardinelli.
 			<a href="index.php">Shows</a>
 			<a href="info.php">Info</a>
 			<a href="media.php">Media</a>
+			<a href="discog.php">Discography</a>
 		</nav>
 
 	</header>
