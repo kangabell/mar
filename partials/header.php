@@ -35,7 +35,12 @@ site by kay belardinelli.
 
 	<header>
 
-		<h1><img src="img/logo.png" alt="Mar" class="logo" /></h1>
+		<h1><a href="index.php"><img src="img/logo.png" alt="Mar" class="logo" /></a></h1>
+
+		<nav>
+			<a href="info.php">Info</a>
+			<a href="media.php">Audio/Video</a>
+		</nav>
 
 	</header>
 
