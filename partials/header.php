@@ -45,4 +45,3 @@ site by kay belardinelli.
 	</header>
 
 	<main>
-		<div class="wrapper">
