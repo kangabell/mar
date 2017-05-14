@@ -3,91 +3,69 @@
 /*
 	#edeae6 white
 	#f2f4eb cream
-	#dedbd6 gray
+	#dedbd6 light gray
 	#76939e blue
 	#303936 light black
 */
 
-@font-face {
-	font-family: 'Aktiv';
-	src: url('fonts/Aktiv_Rg.ttf');
-}
-@font-face {
-	font-family: 'Aktiv';
-	src: url('fonts/Aktiv_Bd.ttf');
-	font-weight: bold;
-}
+/*** LAYOUT ***/
 
 body {
-	color: #303936;
-	font-family: 'Aktiv', sans-serif;
-	font-size: 14px;
-	letter-spacing: 0.05em;
-	line-height: 1.5em;
-	padding: 0;
-	margin: 0;
+	background-color: #fafbf7;
+	padding: 1rem;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 68rem;
 }
 * {
 	box-sizing: border-box;
 }
-h1, h2, h3, h4 {
-	font-weight: normal;
-	letter-spacing: 0.025em;
-	margin-top: 0;
-	text-transform: uppercase;
-}
-a {
-	color: #424c49;
-	border-bottom: 1px solid #6e9eb1;
-	text-decoration: none;
-	transition: border-color 0.125s ease;
-}
-a:hover {
-	border-color: #424c49;
-}
-strong {
-	letter-spacing: 0.05em;
-	text-transform: uppercase;
-}
-ul {
-	padding-left: 1rem;
-}
+
 header, footer {
-	background-color: #f2f4eb;
-	padding: 0.5rem;
+	padding: 1rem 0;
 }
-h1 {
-	margin: 0;
+header {
+	text-align: center;
 }
-.logo {
-	opacity: 0.9;
-	width: 201px;
-}
-.wrapper {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 74em;
-	min-height: 10em;
-	padding: 3em 0.5em;
-}
-.wrapper:before, .wrapper:after {
+header:before, header:after {
 	content: '';
 	display: table;
 }
-.wrapper:after {
+header:after {
 	clear: both;
 }
-main {
-	background: url('img/background.png') no-repeat fixed;
-	background-position: 30% 50px;
-	background-size: cover;
-	padding-top: 50px;
-	position: absolute;
-	top: 50px;
-	width: 100%;
+nav {
+	line-height: 3rem;
 }
-article {
-	max-width: 600px;
+nav a {
+	margin-left: 1rem;
+}
+@media all and (min-width: 720px) {
+	.logo {
+		float: left;
+	}
+	nav {
+		float: right;
+	}
+}
+
+main {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 44rem;
+	min-height: 20rem;
+	padding: 3rem 0.5rem;
+	text-align: center;
+}
+section {
+	margin-bottom: 3rem;
+}
+p {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 38rem;
+}
+ul{
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -110,8 +88,111 @@ figure img {
 figcaption {
 	text-align: left;
 }
+
+footer a {
+	float: right;
+}
+
+/*** TYPOGRAPHY ***/
+
+@font-face {
+  font-family: 'CG Omega';
+  src: url('../fonts/cg-omega.woff2') format('woff2'),
+       url('../fonts/cg-omega.woff') format('woff'),
+       url('../fonts/cg-omega.ttf') format('truetype');
+}
+
+body {
+	color: #303936;
+	font-family: Optima, 'CG Omega', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.025em;
+	line-height: 1.5em;
+}
+
+h1, h2, h3, h4 {
+	font-weight: normal;
+	letter-spacing: 0.05em;
+	margin-top: 0;
+	text-transform: uppercase;
+}
+
+a {
+	text-decoration: none;
+	transition: all 0.125s ease;
+}
+nav a, footer a {
+	color: #6e9eb1;
+	text-transform: uppercase;
+}
+nav a:hover, footer a:hover {
+	color: #424c49;
+}
+a.current {
+	color: #979892;
+	cursor: default;
+}
+a.current:hover {
+	color: #979892;
+}
+main a {
+	color: #424c49;
+	border-bottom: 1px solid #6e9eb1;
+}
+main a:hover {
+	border-color: #424c49;
+}
+
+ul {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0.75rem;
+	text-indent: -0.75rem;
+}
+li:before {
+	content: '-';
+	padding-right: 0.5rem;
+}
+li + li {
+	margin-top: 0.5rem;
+}
+li li:before {
+	content: '\2022';
+}
+
+h1 {
+	margin: 0;
+}
+h1 a {
+	border-bottom: 0;
+}
+
+strong {
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
 small, figcaption {
 	font-size: 0.75em;
+}
+
+blockquote {
+	border-left: 4px solid #dedbd6;
+	max-width: 620px;
+	padding-left: 1rem;
+	position: relative;
+	text-transform: none;
+	text-align: left;
+}
+
+footer {
+	font-size: 0.75rem;
+}
+
+/*** MEDIA ***/
+
+.logo {
+	/*opacity: 0.8;*/
+	width: 120px;
 }
 iframe {
 	margin-left: auto;
@@ -130,7 +211,7 @@ iframe.bandcamp {
     position: relative;
     padding-bottom: 56.25%;
     padding-top: 25px;
-    margin-bottom: $padding/2;
+    margin-bottom: 0.5rem;
     height: 0;
 }
 .videowrapper iframe {
@@ -140,49 +221,4 @@ iframe.bandcamp {
     width: 100%;
     height: 100%;
 }
-section {
-	background: #fff;
-	margin-bottom: 1em;
-	padding: 1em;
-}
-section h3 {
-	border-top: 2px solid #dedbd6;
-	padding-top: 1rem;
-}
-article:not(:first-of-type) {
-	margin-top: 5em;
-}
-article .heading br {
-	margin: 0.75em;
-}
-blockquote {
-	border-left: 4px solid #dedbd6;
-	max-width: 620px;
-	padding-left: 1rem;
-	position: relative;
-	text-transform: none;
-	text-align: left;
-}
-@media all and (min-width: 720px) {
-	article {
-		margin-left: 0;
-	}
-	blockquote {
-		margin: 0 auto;
-	}
-	section.shows, section.details {
-		float: right;
-		width: 34%;
-	}
-	section.news {
-		float: left;
-		padding-top: 0;
-		width: 64%;
-	}
-}
 
-@media all and (min-width: 1280px) {
-	header {
-		padding-left: 11%;
-	}
-}
