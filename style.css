@@ -12,7 +12,7 @@
 
 body {
 	background-color: #fafbf7;
-	padding: 0;
+	padding: 1rem;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 68rem;
@@ -24,6 +24,9 @@ body {
 header, footer {
 	padding: 1rem 0;
 }
+header {
+	text-align: center;
+}
 header:before, header:after {
 	content: '';
 	display: table;
@@ -31,16 +34,21 @@ header:before, header:after {
 header:after {
 	clear: both;
 }
-.logo {
-	float: left;
-}
 nav {
-	float: right;
 	line-height: 3rem;
 }
 nav a {
 	margin-left: 1rem;
 }
+@media all and (min-width: 720px) {
+	.logo {
+		float: left;
+	}
+	nav {
+		float: right;
+	}
+}
+
 main {
 	margin-left: auto;
 	margin-right: auto;
