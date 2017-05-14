@@ -87,9 +87,16 @@ footer a {
 
 /*** TYPOGRAPHY ***/
 
+@font-face {
+  font-family: 'CG Omega';
+  src: url('../fonts/cg-omega.woff2') format('woff2'),
+       url('../fonts/cg-omega.woff') format('woff'),
+       url('../fonts/cg-omega.ttf') format('truetype');
+}
+
 body {
 	color: #303936;
-	font-family: Optima, 'Helvetica Neue', Helvetica, sans-serif;
+	font-family: Optima, 'CG Omega', 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 14px;
 	letter-spacing: 0.025em;
 	line-height: 1.5em;
