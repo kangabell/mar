@@ -41,7 +41,7 @@ site by kay belardinelli.
 			<a href="index.php" <?php if ( (basename($_SERVER['PHP_SELF'],'.php')) == 'index' ) : ?> class="current" <?php endif; ?>>Shows</a>
 			<a href="info.php" <?php if ( (basename($_SERVER['PHP_SELF'],'.php')) == 'info' ) : ?> class="current" <?php endif; ?>>Info</a>
 			<a href="media.php" <?php if ( (basename($_SERVER['PHP_SELF'],'.php')) == 'media' ) : ?> class="current" <?php endif; ?>>Media</a>
-			<a href="discog.php" <?php if ( (basename($_SERVER['PHP_SELF'],'.php')) == 'discog' ) : ?> class="current" <?php endif; ?>>Discography</a>
+			<a href="history.php" <?php if ( (basename($_SERVER['PHP_SELF'],'.php')) == 'history' ) : ?> class="current" <?php endif; ?>>History</a>
 		</nav>
 
 	</header>

@@ -89,6 +89,9 @@ figcaption {
 	text-align: left;
 }
 
+footer em {
+	float: left;
+}
 footer a {
 	float: right;
 }
