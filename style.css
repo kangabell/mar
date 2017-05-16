@@ -222,3 +222,22 @@ iframe.bandcamp {
     height: 100%;
 }
 
+/*** ANNOUNCEMENT ***/
+
+@media all and (min-width: 720px) {
+	section.announcement {
+		background: url('img/bg.png') no-repeat center;
+		background-size: contain;
+		height: 400px;
+		padding: 7rem 2rem 2rem;
+	}
+
+	section.announcement .wrapper {
+		background: rgba(250,251,247,0.75);
+		padding: 1rem;
+	}
+
+	body.index main {
+		padding-top: 0;
+	}
+}

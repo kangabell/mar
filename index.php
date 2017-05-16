@@ -1,12 +1,14 @@
 <?php include ('partials/header.php'); ?>
 
 
-<section class="announcement">
+<section class="announcement"><div class="wrapper">
 	<h2>Tape Release!</h2>
 	<p>New cassette <em>Fill Your Lungs</em> coming this month.</p>
 	<p>If you're in PVD, come to our tape release show (see below), or get in touch for a copy. Really happy to finally be getting this out there.</p>
 	<p><em><3 kay.</em></p>
-</section>
+
+	<!-- <p><img src="img/bg.png"></p> -->
+</div></section>
 
 <section class="shows">
 	<h2>Upcoming Shows</h2>
