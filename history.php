@@ -4,11 +4,9 @@
 
 	<h2>Releases</h2>
 	<ul>
-		<li>
-			Fill Your Lungs <em>2017 (Upcoming)</em>
-		</li>
+		<li><a href="https://m-a-r.bandcamp.com">Fill Your Lungs</a> <em>2017</em></li>
 		<li><a href="https://m-a-r.bandcamp.com/album/trust-in-nothing">Trust in Nothing</a> <em>2016</em></li>
-		<li>Demo <em>2015</em></li>
+		<li><a href="https://m-a-r.bandcamp.com/album/demo">Demo</a> <em>2015</em></li>
 	</ul>
 </section>
 

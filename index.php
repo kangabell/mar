@@ -1,14 +1,27 @@
 <?php include ('partials/header.php'); ?>
 
 
-<section class="announcement"><div class="wrapper">
-	<h2>Tape Release!</h2>
-	<p>New cassette <em>Fill Your Lungs</em> coming this month.</p>
-	<p>If you're in PVD, come to our tape release show (see below), or get in touch for a copy. Really happy to finally be getting this out there.</p>
-	<p><em><3 kay.</em></p>
-
-	<!-- <p><img src="img/bg.png"></p> -->
-</div></section>
+<section class="announcement">
+	<div class="wrapper">
+		<p>NEW TAPE</p>
+		<h2><em>Fill Your Lungs</em></h2>
+		<p><a href="http://m-a-r.bandcamp.com">m-a-r.bandcamp.com</a></p>
+	</div>
+	<div class="wrapper">
+		<h2>Focus the Rage: An Interview with Mar</h2>
+		<p>
+			Kay was interviewed by Dan Shea at Boston Hassle. 
+			<a href="https://bostonhassle.com/focus-the-rage-an-interview-with-mar/">Read it.</a>
+		</p>
+	</div>
+	<div class="wrapper">
+		<h2>about45degrees Interview</h2>
+		<p>Kay and Sean Twomey discuss Mar, loneliness, domestic violence, and artmaking.</p>
+		<p>
+			Listen on <a href="https://soundcloud.com/about45degrees/episode-2-kay-belardinelli">soundcloud</a>.
+		</p>
+	</div>
+</section>
 
 <section class="shows">
 	<h2>Upcoming Shows</h2>
