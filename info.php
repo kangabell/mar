@@ -12,6 +12,9 @@
 	<p>
 		Read an interview with frontperson Kay at <a href="https://bostonhassle.com/focus-the-rage-an-interview-with-mar/">bostonhassle.com</a>.
 	</p>
+	<p>
+		Listen to a <a href="https://soundcloud.com/about45degrees/episode-2-kay-belardinelli">podcast interview with Kay</a>.
+	</p>
 
 	<h3>Members</h3>
 	<p><a href="http://kaybelardinelli.com">Kay Belardinelli</a></p>
@@ -39,7 +42,7 @@
 </section>
 
 <footer>
-	<em>last updated: 16 may 2017</em>
+	<em>last updated: 22 june 2017</em>
 	<a href="https://github.com/kangabell/mar">code: open source</a>
 </footer>
 

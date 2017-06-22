@@ -14,6 +14,10 @@
 
 	<h2>Past Shows</h2>
 
+
+	<p>
+		<strong>May 26 2017</strong> &#151; w/ visibilities, Suicide Magnets, Caroline Park @ Psychic Readings (Providence, RI)
+	</p>
 	<p>
 		<strong>March 11 2017</strong> &#151; w/ Think Tank, The Oracle @ Machines With Magnets (Pawtucket, RI)
 	</p>
