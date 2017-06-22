@@ -16,6 +16,9 @@
 site by kay belardinelli.
 
 -->
+
+<?php include('functions.php'); ?>
+
 <html>
 
 <head>
