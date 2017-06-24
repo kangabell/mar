@@ -41,10 +41,12 @@ site by kay belardinelli.
 		<h1><a href="index.php"><img src="img/logo.png" alt="Mar" class="logo" /></a></h1>
 
 		<nav>
-			<?php hyperlink('news','index'); ?>
-			<?php hyperlink('info'); ?>
-			<?php hyperlink('media'); ?>
-			<?php hyperlink('history'); ?>
+			<?php menu( array(
+				array('news','index'),
+				array('info','info'),
+				array('media','media'),
+				array('history','history'),
+			)); ?>
 		</nav>
 
 	</header>

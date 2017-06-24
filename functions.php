@@ -1,25 +1,22 @@
 <?php
 
-	// echo anchor link
+	// take an array (with sub-arrays of strings) and make links out of it
+	// first item in sub-array is the name that will be displayed, second is the slug
 
-	function hyperlink($name,$slug) {
+	function menu($name) {
+		foreach ($name as $i) {
 
-		// if no slug given, default to name
-		if ( !isset($slug) ) {
-			$slug = $name;
+			// beginning of anchor link
+			echo '<a href="' . $i[1] . '.php"';
+
+			// if url is the same as slug + '.php', mark it
+			if ( (basename($_SERVER['PHP_SELF'],'.php')) == $i[1] ) {
+				echo ' class="current" ';
+			}
+
+			// end of anchor link
+			echo '>' . $i[0] . '</a>';
 		}
-
-		// beginning of anchor link
-		echo '<a href="' . $slug . '.php"';
-
-		// if url is the same as slug + '.php', mark it
-		if ( (basename($_SERVER['PHP_SELF'],'.php')) == $slug ) {
-			echo ' class="current" ';
-		}
-
-		// end of anchor link
-		echo '>' . $name . '</a>';
-		
 	}
 
 
