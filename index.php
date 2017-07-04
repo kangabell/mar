@@ -11,20 +11,11 @@
 
 <section class="shows">
 	<h2>Upcoming Shows</h2>
-	<p>
-		<strong>July 19 2017</strong><br/>
-		<a href="https://xylitolband.bandcamp.com/">Xylitol</a>, <a href="https://daudyflin.bandcamp.com/">Dau&#240;yflin</a>, <a href="https://itspatsy.bandcamp.com/album/demo">Patsy</a>, Sap<br/>
-		Psychic Readings, Providence RI
-	</p>
-	<p>
-		<strong>August 4 2017</strong><br/>
-		Funky Jungle, Providence RI
-	</p>
-	<p>
-		<strong>October 28 2017</strong><br/>
-		<a href="https://heavysea.bandcamp.com/">SEA</a>, <a href="https://preen.bandcamp.com/">Preen</a><br/>
-		Boston MA
-	</p>
+	<div v-for="show in shows">
+		<h3>{{ show.date }}</h3>
+		<p v-if="show.bands" v-html="show.bands"></p>
+		<p>{{ show.location }}</p>
+	</div>
 </section>
 
 <?php include ('partials/footer.php'); ?>

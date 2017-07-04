@@ -117,7 +117,7 @@ body {
 	line-height: 1.5em;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h4 {
 	font-weight: normal;
 	letter-spacing: 0.05em;
 	margin-top: 0;
@@ -178,7 +178,12 @@ h1 a {
 	border-bottom: 0;
 }
 
-strong {
+h3 {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+strong, h3 {
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 }
@@ -197,6 +202,15 @@ blockquote {
 
 footer {
 	font-size: 0.75rem;
+}
+
+section.shows p, section.shows h3 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+section.shows div {
+	margin-bottom: 1rem;
 }
 
 /*** MEDIA ***/
