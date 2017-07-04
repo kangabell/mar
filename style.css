@@ -160,14 +160,15 @@ ul {
 	padding-left: 0.75rem;
 	text-indent: -0.75rem;
 }
-li:before {
+li + li {
+	margin-top: 1rem;
+}
+
+.bulleted li:before {
 	content: '-';
 	padding-right: 0.5rem;
 }
-li + li {
-	margin-top: 0.5rem;
-}
-li li:before {
+.bulleted li li:before {
 	content: '\2022';
 }
 
@@ -204,13 +205,8 @@ footer {
 	font-size: 0.75rem;
 }
 
-section.shows p, section.shows h3 {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-section.shows div {
-	margin-bottom: 1rem;
+section.shows strong, section.shows span {
+	display: block;
 }
 
 /*** MEDIA ***/

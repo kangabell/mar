@@ -16,10 +16,12 @@
 
 <section class="vendors">
 	<h2>Vendors</h2>
-	<p v-for="vendor in vendors">
-		<a v-if="vendor.link" v-bind:href="vendor.link">{{ vendor.name }}</a>
-		<span v-else>{{ vendor.name }}</span>
-	</p>
+	<ul>
+		<li v-for="vendor in vendors">
+			<a v-if="vendor.link" v-bind:href="vendor.link">{{ vendor.name }}</a>
+			<span v-else>{{ vendor.name }}</span>
+		</li>
+	</ul>
 </section>
 
 <section>

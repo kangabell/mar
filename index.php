@@ -11,11 +11,13 @@
 
 <section class="shows">
 	<h2>Upcoming Shows</h2>
-	<div v-for="show in shows">
-		<h3>{{ show.date }}</h3>
-		<p v-if="show.bands" v-html="show.bands"></p>
-		<p>{{ show.location }}</p>
-	</div>
+	<ul>
+		<li v-for="show in shows">
+			<strong>{{ show.date }}</strong>
+			<span v-if="show.bands" v-html="show.bands"></span>
+			<span>{{ show.location }}</span>
+		</li>
+	</ul>
 </section>
 
 <?php include ('partials/footer.php'); ?>
