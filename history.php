@@ -14,7 +14,21 @@
 
 	<h2>Past Shows</h2>
 
-
+	<p>
+		<strong>June 28</strong> &#151; w/ Think Tank, Opening Bell, Exposed as Rot @ Osborn House (New Haven CT)
+	</p>
+	<p>
+		<strong>June 29</strong> &#151; w/ Think Tank, Big Bliss, Dog Shepherd @ Trans-Pecos (Queens NY)
+	</p>
+	<p>
+		<strong>June 30</strong> &#151; w/ Think Tank, Donor, Blind Raftery @ Overlook Hotel (Philadelphia PA)
+	</p>
+	<p>
+		<strong>July 1 2017</strong> &#151; w/ Thou, Cloudrat, Moloch @ Aurora (Providence RI)
+	</p>
+	<p>
+		<strong>July 1 2017</strong> &#151; w/ Think Tank, Perennial, Milky Wimpshake, Electric Mail Myself To Thoreau @ Gold Spring Hollow (Belchertown MA)
+	</p>
 	<p>
 		<strong>May 26 2017</strong> &#151; w/ visibilities, Suicide Magnets, Caroline Park @ Psychic Readings (Providence, RI)
 	</p>
