@@ -44,4 +44,64 @@ window.onload = function () {
       
     });
 
+    var about = new Vue({
+
+      el: '.about',
+      data: {
+		paragraphs: [
+			{
+				text: 'loud heavy noise as a vehicle for psychic survival.'
+			},
+			{
+				text: '<em>(a doom/punk/sludge two-piece with lyrics about emotional trauma and recovery.)</em>'
+			},
+			{
+				text: 'Read an interview with frontperson Kay at <a href="https://bostonhassle.com/focus-the-rage-an-interview-with-mar/">bostonhassle.com</a>.'
+			},
+			{
+				text: 'Listen to a <a href="https://soundcloud.com/about45degrees/episode-2-kay-belardinelli">podcast interview with Kay</a>.'
+			}
+		],
+		members: [
+			{
+				name: 'Kay Belardinelli',
+				link: 'http://kaybelardinelli.com'
+			},
+			{
+				name: 'Eir\u00EDkr \u00C5sheim',
+				link: 'http://plastic-idolatry.com/erik/'
+			}
+		],
+      }
+      
+    });
+
+    var vendors = new Vue({
+
+		el: '.vendors',
+		data: {
+			vendors: [
+				{
+					name: 'Dead Tank Records',
+					link: 'https://deadtankrecords.com/'
+				},
+				{
+					name: 'Armageddon (BOS + PVD)',
+					link: 'http://armageddonshop.com/'
+				},
+				{
+					name: 'Analog Underground (PVD)'
+				},
+				{
+					name: 'MRL (PVD)'
+				},
+				{
+					name: 'Bandcamp',
+					link: 'https://m-a-r.bandcamp.com'
+				}
+			]
+		}
+
+    });
+
 };
