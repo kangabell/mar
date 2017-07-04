@@ -31,6 +31,9 @@ site by kay belardinelli.
 	<meta name="description" content="Two-piece doom metal band from Providence, Rhode Island">
 	<meta name="theme-color" content="#fafbf7">
 
+	<script src="https://unpkg.com/vue"></script>
+	<script type="text/javascript" src="data.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="style.css" media="screen">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

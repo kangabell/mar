@@ -2,18 +2,10 @@
 
 
 <section class="announcement">
-	<div class="wrapper">
-		<p>JUNE 28 - JULY 1</p>
-		<h2>Mini Tour</h2>
-		<p>
-			Thank you to our friends in <a href="https://thinktanknoise.bandcamp.com/">Think Tank</a> for an amazing tour together!!
-		</p>
-	</div>
-	<div class="wrapper">
-		<p>NEW TAPE</p>
-		<h2><em>Fill Your Lungs</em></h2>
-		<p>Named one of Noisey's <a href="https://noisey.vice.com/en_us/article/bjx8wd/the-30-best-overlooked-albums-of-2017-so-far">best overlooked albums of 2017</a></p>
-		<p><a href="http://m-a-r.bandcamp.com">m-a-r.bandcamp.com</a></p>
+	<div class="wrapper" v-for="announcement in announcements">
+		<p>{{ announcement.subtitle }}</p>
+		<h2>{{ announcement.title }}</h2>
+		<p v-html="announcement.content"></p>
 	</div>
 </section>
 
