@@ -1,11 +1,11 @@
-import News from './components/News.vue';
-import Info from './components/Info.vue';
-import Media from './components/Media.vue';
-import past from './components/Past.vue';
+import news from './components/news.vue';
+import info from './components/info.vue';
+import media from './components/media.vue';
+import past from './components/past.vue';
 
 export default [
-	{ path: '/', component: News},
-	{ path: '/info', component: Info },
-	{ path: '/media', component: Media },
+	{ path: '/', component: news},
+	{ path: '/info', component: info },
+	{ path: '/media', component: media },
 	{ path: '/history', component: past }
 ]

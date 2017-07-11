@@ -1,22 +1,25 @@
 <template>
   <div>
+    <app-header></app-header>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 
-import News from './components/News.vue';
-import Info from './components/Info.vue';
-import Media from './components/Media.vue';
-import Past from './components/Past.vue';
+import header from './components/header.vue';
+import news from './components/news.vue';
+import info from './components/info.vue';
+import media from './components/media.vue';
+import past from './components/past.vue';
 
 export default {
   components: {
-    'news': News,
-    'info': Info,
-    'media': Media,
-    'past': Past,
+    'app-header': header,
+    'news': news,
+    'info': info,
+    'media': media,
+    'past': past,
   },
   data() {
     return {

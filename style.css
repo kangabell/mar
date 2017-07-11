@@ -139,11 +139,11 @@ nav a, footer a {
 nav a:hover, footer a:hover {
 	color: #424c49;
 }
-a.current {
+a.router-link-active {
 	color: #979892;
 	cursor: default;
 }
-a.current:hover {
+a.router-link-active:hover {
 	color: #979892;
 }
 main a {
