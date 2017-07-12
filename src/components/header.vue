@@ -2,7 +2,7 @@
 
 	<header>
 
-		<h1><a href="./"><img src="img/logo.png" alt="Mar" class="logo" /></a></h1>
+		<h1><a href="./"><img src="assets/img/logo.png" alt="Mar" class="logo" /></a></h1>
 
 		<nav>
 			<router-link to="/" exact>News</router-link>

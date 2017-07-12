@@ -104,9 +104,9 @@ section.announcement .wrapper + .wrapper {
 
 @font-face {
   font-family: 'CG Omega';
-  src: url('../fonts/cg-omega.woff2') format('woff2'),
-       url('../fonts/cg-omega.woff') format('woff'),
-       url('../fonts/cg-omega.ttf') format('truetype');
+  src: url('/assets/fonts/cg-omega.woff2') format('woff2'),
+       url('/assets/fonts/cg-omega.woff') format('woff'),
+       url('/assets/fonts/cg-omega.ttf') format('truetype');
 }
 
 body {
@@ -247,7 +247,7 @@ iframe.bandcamp {
 
 @media all and (min-width: 720px) {
 	section.announcement {
-		background: url('img/bg.png') no-repeat center;
+		background: url('../assets/img/bg.png') no-repeat center;
 		background-size: contain;
 		height: 540px;
 		margin-bottom: 0;
