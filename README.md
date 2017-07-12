@@ -1,6 +1,8 @@
-# mar4
+# MAR
 
-> A Vue.js project
+> website for the band mar, by kay belardinelli. 
+> marpvd.com
+
 
 ## Build Setup
 
@@ -15,4 +17,4 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+more info: [docs for vue-loader](http://vuejs.github.io/vue-loader).
