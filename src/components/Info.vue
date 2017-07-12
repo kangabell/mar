@@ -29,8 +29,8 @@
 		<section>
 
 			<h2>Contact</h2>
-			<p>info at mar pvd dot com</p>
-			<p>P.O. Box 23285, Providence RI 02903</p>
+			<p>{{ email }}</p>
+			<p>{{ address }}</p>
 
 		</section>
 
@@ -93,7 +93,9 @@
 						name: 'Bandcamp',
 						link: 'https://m-a-r.bandcamp.com'
 					}
-				]
+				],
+				email: 'info at mar pvd dot com',
+				address: 'P.O. Box 23285, Providence RI 02903'
 			}
 		},
 	}
