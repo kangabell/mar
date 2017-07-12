@@ -35,7 +35,7 @@
 		</section>
 
 		<footer>
-			<em>last updated: <?php echo update('.'); ?></em>
+			<em>last updated: {{ dateM }}</em>
 			<a href="https://github.com/kangabell/mar">code: open source</a>
 		</footer>
 
@@ -49,6 +49,7 @@
 
 		data() {
 			return {
+				dateM: '12 july 2017',
 				paragraphs: [
 					{
 						text: 'loud heavy noise as a vehicle for psychic survival.'
