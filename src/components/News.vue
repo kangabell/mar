@@ -65,3 +65,11 @@
 	}
 
 </script>
+
+<style>
+
+	main {
+		padding-top: 0;
+	}
+
+</style>

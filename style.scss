@@ -223,12 +223,6 @@ iframe {
 	margin-left: auto;
 	margin-right: auto;
 }
-iframe.bandcamp, iframe.soundcloud {
-	width: 100%;
-}
-iframe.bandcamp {
-	margin-bottom: 0.5em;
-}
 .videowrapper {
     float: none;
     clear: both;
@@ -265,9 +259,5 @@ iframe.bandcamp {
 		+ .wrapper {
 			margin-top: 0;
 		}
-	}
-
-	body.index main {
-		padding-top: 0;
 	}
 }

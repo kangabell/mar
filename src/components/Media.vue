@@ -5,7 +5,7 @@
 		<section v-for="item in items">
 
 			<iframe v-if="item.type === 'iframe'" v-bind:src="item.src" seamless><a v-bind:href="item.url">{{ item.title }}</a></iframe>
-			
+
 			<figure v-if="item.type === 'image'">
 				<a v-bind:href="item.src">
 					<img v-bind:src="item.src" v-bind:alt="item.title" />
@@ -34,7 +34,7 @@
 					{
 						title: 'Mar, 2017',
 						type:  'image',
-						src: 'img/mar-16.jpg',
+						src: 'assets/img/mar-16.jpg',
 					},
 					{
 						title: 'Trust in Nothing by Mar',
