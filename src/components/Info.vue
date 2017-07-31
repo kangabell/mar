@@ -8,7 +8,16 @@
 			<div v-for="paragraph in paragraphs">
 				<p v-html="paragraph.text"></p>
 			</div>
+
 			<br/>
+
+			<h3>Press</h3>
+			<div v-for="article in articles">
+				<p><a v-bind:href="article.link">{{ article.title }}</a></p>
+			</div>
+
+			<br/>
+
 			<h3>Members</h3>
 			<div v-for="member in members">
 				<p><a v-bind:href="member.link">{{ member.name }}</a></p>
@@ -49,19 +58,24 @@
 
 		data() {
 			return {
-				dateM: '12 july 2017',
+				dateM: '31 july 2017',
 				paragraphs: [
 					{
 						text: 'loud heavy noise as a vehicle for psychic survival.'
+					}
+				],
+				articles: [
+					{
+						title: 'Noisey\'s 30 Best Overlooked Albums of 2017 So Far',
+						link: 'https://noisey.vice.com/en_us/article/bjx8wd/the-30-best-overlooked-albums-of-2017-so-far'
 					},
 					{
-						text: '<em>(a doom/punk/sludge two-piece with lyrics about emotional trauma and recovery.)</em>'
+						title: 'Boston Hassle interview',
+						link: 'https://bostonhassle.com/focus-the-rage-an-interview-with-mar/'
 					},
 					{
-						text: 'Read an interview with frontperson Kay at <a href="https://bostonhassle.com/focus-the-rage-an-interview-with-mar/">bostonhassle.com</a>.'
-					},
-					{
-						text: 'Listen to a <a href="https://soundcloud.com/about45degrees/episode-2-kay-belardinelli">podcast interview with Kay</a>.'
+						title: 'Podcast interview with frontperson Kay',
+						link: 'https://soundcloud.com/about45degrees/episode-2-kay-belardinelli'
 					}
 				],
 				members: [

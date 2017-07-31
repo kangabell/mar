@@ -50,20 +50,16 @@
 					}
 				],
 				shows: [
+
 					{
-						date: 'June 28 2017',
-						bands: 'Think Tank, Opening Bell, Exposed as Rot',
-						location: 'Osborn House (New Haven CT)'
+						date: 'July 19 2017',
+						bands: 'Xylitol, Dau\u00F0yflin, Patsy, Sap',
+						location: 'Psychic Readings, Providence RI'
 					},
 					{
-						date: 'June 29 2017',
-						bands: 'Think Tank, Big Bliss, Dog Shepherd',
-						location: 'Trans-Pecos (Queens NY)'
-					},
-					{
-						date: 'June 30 2017',
-						bands: 'Think Tank, Donor, Blind Raftery',
-						location: 'Overlook Hotel (Philadelphia PA)'
+						date: 'July 1 2017',
+						bands: 'Think Tank, Perennial, Milky Wimpshake, Electric Mail Myself To Thoreau',
+						location: 'Gold Spring Hollow (Belchertown MA)'
 					},
 					{
 						date: 'July 1 2017',
@@ -71,9 +67,19 @@
 						location: 'Aurora (Providence RI)'
 					},
 					{
-						date: 'July 1 2017',
-						bands: 'Think Tank, Perennial, Milky Wimpshake, Electric Mail Myself To Thoreau',
-						location: 'Gold Spring Hollow (Belchertown MA)'
+						date: 'June 30 2017',
+						bands: 'Think Tank, Donor, Blind Raftery',
+						location: 'Overlook Hotel (Philadelphia PA)'
+					},
+					{
+						date: 'June 29 2017',
+						bands: 'Think Tank, Big Bliss, Dog Shepherd',
+						location: 'Trans-Pecos (Queens NY)'
+					},
+					{
+						date: 'June 28 2017',
+						bands: 'Think Tank, Opening Bell, Exposed as Rot',
+						location: 'Osborn House (New Haven CT)'
 					},
 					{
 						date: 'May 26 2017',
