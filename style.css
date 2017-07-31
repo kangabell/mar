@@ -237,15 +237,15 @@ iframe.bandcamp {
 
 @media all and (min-width: 720px) {
 	section.announcement {
-		background: url('img/bg.png') no-repeat center;
+		/*background: url('img/bg.png') no-repeat center;*/
 		background-size: contain;
-		height: 540px;
+		/*height: 540px;*/
 		margin-bottom: 0;
 		padding: 2rem 2rem 2rem;
 	}
 
 	section.announcement .wrapper {
-		background: rgba(250,251,247,0.75);
+		/*background: rgba(250,251,247,0.75);*/
 		margin-bottom: 1rem;
 		padding: 1rem;
 	}
