@@ -21,28 +21,15 @@
 
 <script>
 
+	import {db} from '../firebase';
+
 	export default {
 		data() {
-			return {
-				items: [
-					{
-						title: 'Fill Your Lungs by Mar',
-						type: 'iframe',
-						url: 'http://m-a-r.bandcamp.com/album/fill-your-lungs',
-						src: 'https://bandcamp.com/EmbeddedPlayer/album=3170236442/size=large/bgcol=edeae6/linkcol=76939e/tracklist=false/artwork=small/transparent=true/'
-					},
-					{
-						title: 'Mar, 2017',
-						type:  'image',
-						src: 'assets/img/mar-16.jpg',
-					},
-					{
-						title: 'Trust in Nothing by Mar',
-						type: 'iframe',
-						url: 'http://m-a-r.bandcamp.com/album/trust-in-nothing',
-						src: 'https://bandcamp.com/EmbeddedPlayer/album=2917446271/size=large/bgcol=edeae6/linkcol=76939e/tracklist=false/artwork=small/transparent=true/'
-					}
-				]
+			items: {}
+		},
+		firebase: {
+			items: {
+				source: db.ref('items'),
 			}
 		}
 	}
