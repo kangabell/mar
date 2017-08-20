@@ -13,7 +13,7 @@
 		<section class="shows">
 			<h2>Upcoming Shows</h2>
 			<ul>
-				<li v-for="show in shows">
+				<li v-for="show in shows" v-if="show.archive === false">
 					<strong>{{ show.date }}</strong>
 					<span v-if="show.bands" v-html="show.bands"></span>
 					<span>{{ show.location }}</span>
