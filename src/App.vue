@@ -20,16 +20,9 @@ export default {
     'info': info,
     'media': media,
     'past': past,
-  },
-  data() {
-    return {
-
-    }
-  },
-  methods: {
-
   }
 }
+
 </script>
 
 <style lang="scss">

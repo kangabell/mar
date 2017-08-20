@@ -21,10 +21,8 @@ body {
 	box-sizing: border-box;
 }
 
-header, footer {
-	padding: 1rem 0;
-}
 header {
+	padding: 1rem 0;
 	text-align: center;
 	&:before, &:after {
 		content: '';
@@ -90,15 +88,6 @@ figcaption {
 	text-align: left;
 }
 
-footer {
-	em {
-		float: left;
-	}
-	a {
-		float: right;
-	}
-}
-
 section.announcement .wrapper + .wrapper {
 	margin-top: 2rem;
 }
@@ -135,10 +124,10 @@ a {
 	text-decoration: none;
 	transition: all 0.125s ease;
 }
-nav a, footer a {
+nav a {
 	color: $blue;
 	text-transform: uppercase;
-	&:hover, footer a:hover {
+	&:hover {
 		color: $dark;
 	}
 }
@@ -204,10 +193,6 @@ blockquote {
 	position: relative;
 	text-transform: none;
 	text-align: left;
-}
-
-footer {
-	font-size: 0.75rem;
 }
 
 section.shows strong, section.shows span {
