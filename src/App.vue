@@ -13,8 +13,6 @@ import info from './components/info.vue';
 import media from './components/media.vue';
 import past from './components/past.vue';
 
-// let showsRef = db.ref('shows')
-
 export default {
   components: {
     'app-header': header,
@@ -22,18 +20,8 @@ export default {
     'info': info,
     'media': media,
     'past': past,
-  },
-  data() {
-    return {
-
-    }
-  },
-  methods: {
-
   }
 }
-
-
 
 </script>
 

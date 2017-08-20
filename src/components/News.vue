@@ -31,8 +31,10 @@
 	
 	export default {
 		data() {
-			announcements: {}
-			shows: {}
+			return {
+				announcements: {},
+				shows: {}
+			}
 		},
 		firebase: {
 			announcements: {

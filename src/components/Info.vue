@@ -45,7 +45,6 @@
 		</section>
 
 		<footer>
-			<em>last updated: <span id="dateM"></span></em>
 			<a href="https://github.com/kangabell/mar">code: open source</a>
 		</footer>
 
@@ -56,11 +55,6 @@
 <script>
 
 	import {db} from '../firebase';
-
-	// convoluted way of getting a string from the database and displaying it. find a better way later...
-	db.ref('dateM').once('value').then(function(snapshot) {
-		document.getElementById('dateM').innerHTML = snapshot.val();
-	});
 
 	export default {
 

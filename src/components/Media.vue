@@ -25,7 +25,9 @@
 
 	export default {
 		data() {
-			items: {}
+			return {
+				items: {}
+			}
 		},
 		firebase: {
 			items: {
