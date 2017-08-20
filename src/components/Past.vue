@@ -17,9 +17,10 @@
 			<h2>Past Shows</h2>
 
 			<p v-for="show in shows" v-if="show.archive !== false">
-				<strong>{{ show.date }}</strong> &#151; w/ {{ show.bands }} @ {{ show.location }}
+				<strong>{{ show.date }}</strong> &#151; w/ 
+				<span v-if="show.bands" v-for="(band, index) in show.bands">{{ band.name }}<span v-if="index+1 < show.bands.length">, </span></span> <!-- comma-separated list of bands -->
+				@ {{ show.location }}
 			</p>
-
 		</section>
 
 	</main>

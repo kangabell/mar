@@ -15,7 +15,9 @@
 			<ul>
 				<li v-for="show in shows" v-if="show.archive === false">
 					<strong>{{ show.date }}</strong>
-					<span v-if="show.bands" v-html="show.bands"></span>
+					<span v-if="show.bands" v-for="band in show.bands">
+						<a v-if="band.url" v-bind:href="band.url">{{ band.name }}</a>
+					</span>
 					<span>{{ show.location }}</span>
 				</li>
 			</ul>
