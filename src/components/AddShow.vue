@@ -6,29 +6,37 @@
 
 		<section>
 
-			<div>
-				<label for="date">Date *</label>
-				<input type="date" id="date" />
-			</div>
+			<form>
 
-			<div>
-				<label for="location">Location *</label>
-				<input type="text" />
-			</div>
-
-			<div class="band" v-for="band in bands">
 				<div>
-					<label for="bname">Band Name</label>
-					<input type="text" id="bname" />
+					<label for="date">Date *</label>
+					<input v-model="show.date" type="date" id="date" />
 				</div>
-				<div>
-					<label for="burl">Band URL</label>
-					<input type="url" id="burl" />
-				</div>
-				<a class="button add" @click="add">+</a>
-			</div>
 
-			<a class="button">Add Show</a>
+				<div>
+					<label for="location">Location *</label>
+					<input v-model="show.location" type="text" />
+				</div>
+
+				<div class="band" v-for="band in bands">
+					<div>
+						<label for="bname">Band Name</label>
+						<input v-model="band.name" type="text" id="bname" />
+					</div>
+					<div>
+						<label for="burl">Band URL</label>
+						<input v-model="band.url" type="url" id="burl" />
+					</div>
+					<a class="button add" @click="add">+</a>
+				</div>
+
+				<a class="button" v-on:click="addShow">Add Show</a>
+
+			</form>
+
+			
+
+			<p><pre>data: {{ $data }}</pre></p>
 
 		</section>
 
@@ -38,21 +46,39 @@
 
 <script>
 
+	import {db} from '../firebase'
+
 	export default {
 		data() {
 			return {
+				show: {
+					date: "",
+					location: "",
+					band: {
+						name: "",
+						url: ""
+					}
+				},
 			    bands: [{
 			      count: 0
 			    }],
 			    count: 0
 			}
 		  },
-
+		  firebase: {
+		    shows: db.ref('shows')
+		  },
 		  methods: {
 		    add: function() {
 		      this.bands.push({
 		        count: ++this.count
 		      });
+		    },
+		    addShow: function(){
+		    	this.$firebaseRefs.shows.push({
+		    		date: this.show.date,
+		    		location: this.show.location
+		    	})
 		    }
 		  }
 	}
