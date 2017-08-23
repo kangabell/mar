@@ -13,7 +13,7 @@
 		<section class="shows">
 			<h2>Upcoming Shows</h2>
 			<ul>
-				<li v-for="show in shows" v-if="show.archive === false">
+				<li v-for="show in orderedShows" v-if="show.archive === false">
 					<strong>{{ show.date }}</strong>
 					<span v-if="show.bands" v-for="band in show.bands">
 						<a v-if="band.url" v-bind:href="band.url">{{ band.name }}</a>
@@ -30,6 +30,7 @@
 <script>
 	  
 	import {db} from '../firebase';
+	import _ from 'lodash';
 	
 	export default {
 		data() {
@@ -45,6 +46,11 @@
 			shows: {
 				source: db.ref('shows'),
 			}
+		},
+		computed: {
+		  orderedShows: function () {
+		    return _.orderBy(this.shows, 'date')
+		  }
 		}
 	}
 
