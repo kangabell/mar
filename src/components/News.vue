@@ -14,7 +14,7 @@
 			<h2>Upcoming Shows</h2>
 			<ul>
 				<li v-for="show in orderedShows" v-if="show.archive === false">
-					<strong>{{ show.date }}</strong>
+					<strong>{{ show.date | formatDate }}</strong>
 					<span v-if="show.bands" v-for="band in show.bands">
 						<a v-if="band.url" v-bind:href="band.url">{{ band.name }}</a>
 					</span>
@@ -29,8 +29,9 @@
 
 <script>
 	  
-	import {db} from '../firebase';
-	import _ from 'lodash';
+	import {db} from '../firebase'
+	import _ from 'lodash'
+	import moment from 'moment'
 	
 	export default {
 		data() {
@@ -51,6 +52,11 @@
 		  orderedShows: function () {
 		    return _.orderBy(this.shows, 'date')
 		  }
+		},
+		filters: {
+			formatDate: function(value) {
+				if (value) return moment(String(value)).format('MMMM D YYYY')
+		  	}
 		}
 	}
 

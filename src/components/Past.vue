@@ -17,7 +17,7 @@
 			<h2>Past Shows</h2>
 
 			<p v-for="show in orderedShows" v-if="show.archive !== false">
-				<strong>{{ show.date }}</strong> &#151; w/ 
+				<strong>{{ show.date | formatDate }}</strong> &#151; w/ 
 				<span v-if="show.bands" v-for="(band, index) in show.bands">{{ band.name }}<span v-if="index+1 < show.bands.length">, </span></span> <!-- comma-separated list of bands -->
 				@ {{ show.location }}
 			</p>
@@ -29,8 +29,11 @@
 
 <script>
 
-	import {db} from '../firebase';
-	import _ from 'lodash';
+	import {db} from '../firebase'
+	import _ from 'lodash'
+	import moment from 'moment'
+
+	
 
 	export default {
 
@@ -52,7 +55,13 @@
 		  orderedShows: function () {
 		    return _.orderBy(this.shows, 'date').reverse();
 		  }
+		},
+		filters: {
+			formatDate: function(value) {
+				if (value) return moment(String(value)).format('MMMM D YYYY')
+		  	}
 		}
+
 	}
 
 </script>
