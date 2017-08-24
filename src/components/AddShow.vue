@@ -18,7 +18,7 @@
 					<input v-model="show.location" type="text" />
 				</div>
 
-				<div class="band" v-for="band in bands">
+				<div class="band" v-for="band in show.bands">
 					<div>
 						<label for="bname">Band Name</label>
 						<input v-model="band.name" type="text" id="bname" />
@@ -31,8 +31,6 @@
 				</div>
 
 				<a class="button" v-on:click="addShow">Add Show</a>
-
-				<p><pre>data: {{ $data }}</pre></p>
 
 			</form>
 
@@ -57,14 +55,10 @@
 				show: {
 					date: "",
 					location: "",
-					band: {
-						name: "",
-						url: ""
-					}
+					bands: [{
+					  count: 0
+					}],
 				},
-			    bands: [{
-			      count: 0
-			    }],
 			    count: 0,
 			    submitted: false
 			}
@@ -74,7 +68,7 @@
 		  },
 		  methods: {
 		    add: function() {
-		      this.bands.push({
+		      this.show.bands.push({
 		        count: ++this.count
 		      });
 		    },
@@ -82,7 +76,7 @@
 		    	this.$firebaseRefs.shows.push({
 		    		date: this.show.date,
 		    		location: this.show.location,
-		    		// bands: this.show.bands
+		    		bands: this.show.bands
 		    		
 		    	}).then( this.submitted = true )
 		    }
