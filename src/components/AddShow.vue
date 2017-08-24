@@ -2,9 +2,9 @@
 
 	<main>
 
-		<h2>Add New Show</h2>
+		<section v-if="!submitted">
 
-		<section>
+			<h2>Add New Show</h2>
 
 			<form>
 
@@ -32,13 +32,16 @@
 
 				<a class="button" v-on:click="addShow">Add Show</a>
 
+				<p><pre>data: {{ $data }}</pre></p>
+
 			</form>
 
-			
-
-			<p><pre>data: {{ $data }}</pre></p>
-
 		</section>
+
+		<div v-if="submitted">
+			<h2>Show Submitted</h2>
+			<p>Thank you.</p>
+		</div>
 
 	</main>
 
@@ -62,7 +65,8 @@
 			    bands: [{
 			      count: 0
 			    }],
-			    count: 0
+			    count: 0,
+			    submitted: false
 			}
 		  },
 		  firebase: {
@@ -77,8 +81,10 @@
 		    addShow: function(){
 		    	this.$firebaseRefs.shows.push({
 		    		date: this.show.date,
-		    		location: this.show.location
-		    	})
+		    		location: this.show.location,
+		    		// bands: this.show.bands
+		    		
+		    	}).then( this.submitted = true )
 		    }
 		  }
 	}
