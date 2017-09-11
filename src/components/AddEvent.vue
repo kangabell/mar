@@ -64,6 +64,7 @@
 					bands: [{
 					  count: 0
 					}],
+					archive: false
 				},
 			    count: 0,
 			    submitted: false
@@ -84,7 +85,8 @@
 				    this.$firebaseRefs.events.push({
 				    	date: this.event.date,
 				    	location: this.event.location,
-				    	bands: this.event.bands
+				    	bands: this.event.bands,
+				    	archive: this.event.archive
 				    }).then( this.submitted = true ) 
 				} } )
 			}
