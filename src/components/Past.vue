@@ -16,10 +16,10 @@
 
 			<h2>Past Shows</h2>
 
-			<p v-for="show in orderedShows" v-if="show.archive !== false">
-				<strong>{{ show.date | formatDate }}</strong> &#151; w/ 
-				<span v-if="show.bands" v-for="(band, index) in show.bands">{{ band.name }}<span v-if="index+1 < show.bands.length">, </span></span> <!-- comma-separated list of bands -->
-				@ {{ show.location }}
+			<p v-for="event in orderedEvents" v-if="event.archive !== false">
+				<strong>{{ event.date | formatDate }}</strong> &#151; w/ 
+				<span v-if="event.bands" v-for="(band, index) in event.bands">{{ band.name }}<span v-if="index+1 < event.bands.length">, </span></span> <!-- comma-separated list of bands -->
+				@ {{ event.location }}
 			</p>
 		</section>
 
@@ -40,20 +40,20 @@
 		data() {
 			return {
 				releases: {},
-				shows: {}
+				events: {}
 			}
 		},
 		firebase: {
 			releases: {
 				source: db.ref('releases'),
 			},
-			shows: {
-				source: db.ref('shows'),
+			events: {
+				source: db.ref('events'),
 			}
 		},
 		computed: {
-		  orderedShows: function () {
-		    return _.orderBy(this.shows, 'date').reverse();
+		  orderedEvents: function () {
+		    return _.orderBy(this.events, 'date').reverse();
 		  }
 		},
 		filters: {

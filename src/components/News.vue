@@ -13,12 +13,12 @@
 		<section class="shows">
 			<h2>Upcoming Shows</h2>
 			<ul>
-				<li v-for="show in orderedShows" v-if="show.archive === false">
-					<strong>{{ show.date | formatDate }}</strong>
-					<span v-if="show.bands" v-for="band in show.bands">
+				<li v-for="event in orderedEvents" v-if="event.archive === false">
+					<strong>{{ event.date | formatDate }}</strong>
+					<span v-if="event.bands" v-for="band in event.bands">
 						<a v-if="band.url" v-bind:href="band.url">{{ band.name }}</a>
 					</span>
-					<span>{{ show.location }}</span>
+					<span>{{ event.location }}</span>
 				</li>
 			</ul>
 		</section>
@@ -37,20 +37,20 @@
 		data() {
 			return {
 				announcements: {},
-				shows: {}
+				events: {}
 			}
 		},
 		firebase: {
 			announcements: {
 				source: db.ref('announcements'),
 			},
-			shows: {
-				source: db.ref('shows'),
+			events: {
+				source: db.ref('events'),
 			}
 		},
 		computed: {
-		  orderedShows: function () {
-		    return _.orderBy(this.shows, 'date')
+		  orderedEvents: function () {
+		    return _.orderBy(this.events, 'date')
 		  }
 		},
 		filters: {
