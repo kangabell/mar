@@ -10,7 +10,7 @@
 
 				<div>
 					<label for="date">Date *</label>
-					<input v-model="show.date" v-validate="'required'" :class="{'input': true, 'is-danger': errors.has('date') }" data-vv-delay="1000" placeholder="DD/MM/YYYY" type="text" name="date" />
+					<input v-model="show.date" v-validate="'required'" :class="{'input': true, 'is-danger': errors.has('date') }" data-vv-delay="1000" placeholder="YYYY/DD/MM" type="text" name="date" />
 					<span v-show="errors.has('date')" class="is-danger">{{ errors.first('date') }}</span>
 				</div>
 
@@ -20,16 +20,18 @@
 					<span v-show="errors.has('location')" class="help is-danger">{{ errors.first('location') }}</span>
 				</div>
 
-				<div class="band" v-for="band in show.bands">
-					<div>
-						<label for="bname">Band Name</label>
-						<input v-model="band.name" type="text" id="bname" />
+				<div class="bands">
+					<div class="band" v-for="band in show.bands">
+						<div>
+							<label for="bname">Band Name</label>
+							<input v-model="band.name" type="text" id="bname" />
+						</div>
+						<div>
+							<label for="burl">Band URL</label>
+							<input v-model="band.url" type="url" id="burl" />
+						</div>
+						<a class="button add" @click="add">+</a>
 					</div>
-					<div>
-						<label for="burl">Band URL</label>
-						<input v-model="band.url" type="url" id="burl" />
-					</div>
-					<a class="button add" @click="add">+</a>
 				</div>
 
 				<div>* <em>required</em></div>
@@ -140,10 +142,13 @@
 		display: none;
 	}
 
-	.band:last-of-type .button.add {
+	.band {
+		margin-top: 1rem;
+	}
+
+	.bands div:last-of-type .button.add {
 		display: block;
 		float: right;
-		margin-top: 2rem;
 	}
 
 	input.is-danger {
