@@ -195,8 +195,13 @@ blockquote {
 	text-align: left;
 }
 
-section.shows strong, section.shows span {
-	display: block;
+section.shows {
+	strong, .location {
+		display: block;
+	}
+	// .band + .band:before {
+	// 	content: ', ';
+	// }
 }
 
 /*** MEDIA ***/
