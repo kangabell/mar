@@ -15,6 +15,7 @@
 			<ul>
 				<li v-for="show in orderedShows" v-if="show.archive === false">
 					<strong>{{ show.date | formatDate }}</strong>
+					<span v-if="show.note" class="note">{{ show.note }}</span>
 					<span v-if="show.bands" v-for="(band, index) in show.bands" class="band">
 						<a v-if="band.url" v-bind:href="band.url">{{ band.name }}</a><span v-else>{{ band.name }}</span><span v-if="index+1 < show.bands.length">, </span>
 					</span>

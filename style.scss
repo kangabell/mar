@@ -196,12 +196,9 @@ blockquote {
 }
 
 section.shows {
-	strong, .location {
+	strong, .note, .location {
 		display: block;
 	}
-	// .band + .band:before {
-	// 	content: ', ';
-	// }
 }
 
 /*** MEDIA ***/
