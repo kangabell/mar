@@ -9,7 +9,7 @@
 
 import header from './components/header.vue';
 import home from './components/home.vue';
-import news from './components/news.vue';
+import shows from './components/shows.vue';
 import info from './components/info.vue';
 import media from './components/media.vue';
 import past from './components/past.vue';
@@ -18,7 +18,7 @@ export default {
   components: {
     'app-header': header,
     'home': home,
-    'news': news,
+    'shows': shows,
     'info': info,
     'media': media,
     'past': past,
