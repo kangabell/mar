@@ -10,14 +10,14 @@
 import header from './components/header.vue';
 import home from './components/home.vue';
 import shows from './components/shows.vue';
-import media from './components/media.vue';
+import music from './components/music.vue';
 
 export default {
   components: {
     'app-header': header,
     'home': home,
     'shows': shows,
-    'media': media,
+    'music': music,
   }
 }
 

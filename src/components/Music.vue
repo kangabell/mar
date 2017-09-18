@@ -6,13 +6,10 @@
 
 			<iframe v-if="item.type === 'iframe'" v-bind:src="item.src" seamless><a v-bind:href="item.url">{{ item.title }}</a></iframe>
 
-			<figure v-if="item.type === 'image'">
-				<a v-bind:href="item.src">
-					<img v-bind:src="item.src" v-bind:alt="item.title" />
-					<figcaption>[click to enlarge]</figcaption>
-				</a>
-			</figure>
+		</section>
 
+		<section>
+			<a href="https://m-a-r.bandcamp.com/" class="img bandcamp"><img src="img/bandcamp-logo.png" alt="Bandcamp logo" /></a>
 		</section>
 
 	</main>
