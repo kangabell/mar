@@ -57,13 +57,6 @@ main img {
 a.img {
 	border-bottom: none;
 }
-img.small {
-	max-width: 12rem;
-	height: auto;
-}
-img[src$='.gif'] {
-	max-width: 30em;
-}
 a.bandcamp {
 	opacity: 0.8;
 	img {
@@ -72,13 +65,6 @@ a.bandcamp {
 	&:hover {
 		opacity: 0.9;
 	}
-}
-
-figure img {
-	margin-bottom: 0.5em;
-}
-figcaption {
-	text-align: left;
 }
 
 section.announcement .wrapper + .wrapper {
@@ -196,31 +182,4 @@ section.shows {
 iframe {
 	margin-left: auto;
 	margin-right: auto;
-}
-.videowrapper {
-    float: none;
-    clear: both;
-    width: 100%;
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 25px;
-    margin-bottom: 0.5rem;
-    height: 0;
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-/*** ANNOUNCEMENT ***/
-
-@media all and (min-width: 720px) {dding-top: 0;
-
-	section.announcement .wrapper {
-		margin-bottom: 4rem;
-	}
-	
 }
