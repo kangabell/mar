@@ -8,60 +8,43 @@ $dark: #424c49;
 $blue: #6e9eb1;
 $black: #303936;
 
+%wrap {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 68rem;
+}
+
 /*** LAYOUT ***/
 
 body {
 	background-color: $white;
-	padding: 1rem;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 68rem;
+	margin: 0;
+	padding: 0;
 }
 * {
 	box-sizing: border-box;
 }
 
-header {
-	padding: 1rem 0;
-	text-align: center;
-	&:before, &:after {
-		content: '';
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
-}
 nav {
-	line-height: 3rem;
-	a {
-		margin-left: 1rem;
-	}
+	background: $black;
+	padding: 0 1rem;
+	text-align: right;
 }
-
-@media all and (min-width: 720px) {
-	.logo {
-		float: left;
-	}
-	nav {
-		float: right;
-	}
+header h1 {
+	margin-top: 8rem;
+	margin-bottom: 4rem;
+	@extend %wrap;
 }
 
 main {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 44rem;
 	min-height: 20rem;
 	padding: 3rem 0.5rem;
-	text-align: center;
+	@extend %wrap;
 }
 section {
 	margin-bottom: 3rem;
 }
 p {
-	margin-left: auto;
-	margin-right: auto;
 	max-width: 38rem;
 }
 ul{
@@ -104,9 +87,9 @@ section.announcement .wrapper + .wrapper {
 body {
 	color: $black;
 	font-family: Optima, 'CG Omega', 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	letter-spacing: 0.025em;
-	line-height: 1.5em;
+	line-height: 1.75em;
 }
 
 h1, h2, h4 {
@@ -125,10 +108,11 @@ a {
 	transition: all 0.125s ease;
 }
 nav a {
-	color: $blue;
+	color: $silver;
+	margin-left: 1rem;
 	text-transform: uppercase;
 	&:hover {
-		color: $dark;
+		color: $white;
 	}
 }
 a.router-link-active {
@@ -187,12 +171,8 @@ small, figcaption {
 }
 
 blockquote {
-	border-left: 4px solid $silver;
-	max-width: 620px;
-	padding-left: 1rem;
-	position: relative;
-	text-transform: none;
-	text-align: left;
+	font-size: 1.125rem;
+	margin: 3rem 0;
 }
 
 section.shows {
@@ -203,9 +183,6 @@ section.shows {
 
 /*** MEDIA ***/
 
-.logo {
-	width: 120px;
-}
 iframe {
 	margin-left: auto;
 	margin-right: auto;
