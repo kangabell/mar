@@ -11,7 +11,6 @@ import header from './components/header.vue';
 import home from './components/home.vue';
 import shows from './components/shows.vue';
 import media from './components/media.vue';
-import past from './components/past.vue';
 
 export default {
   components: {
@@ -19,7 +18,6 @@ export default {
     'home': home,
     'shows': shows,
     'media': media,
-    'past': past,
   }
 }
 
