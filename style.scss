@@ -129,7 +129,7 @@ body {
 	line-height: 1.75em;
 }
 
-h1, h2, h4 {
+h1, h2, h3, h4 {
 	font-weight: normal;
 	letter-spacing: 0.05em;
 	margin-top: 0;
@@ -138,6 +138,10 @@ h1, h2, h4 {
 
 h2 {
 	margin-bottom: 2rem;
+}
+
+h3 {
+	font-size: 1em;
 }
 
 p + h3 {
@@ -196,12 +200,7 @@ h1 {
 	}
 }
 
-h3 {
-	font-size: 1em;
-	font-weight: bold;
-}
-
-strong, h3 {
+strong {
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 }
