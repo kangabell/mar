@@ -14,12 +14,35 @@ $black: #303936;
 	max-width: 68rem;
 }
 
+%clearfix {
+	&:after {
+		clear: both;
+		content: '';
+		display: table;
+	}
+}
+
 /*** LAYOUT ***/
 
 body {
 	background-color: $white;
 	margin: 0;
 	padding: 0;
+	position: relative;
+	&:before, &:after { // dark bars
+		background: $black;
+		content: '';
+		height: 0.75rem;
+		width: 100%;
+		position: absolute;
+		left: 0;
+	}
+	&:before {
+		top: 0;
+	}
+	&:after {
+		bottom: 0;
+	}
 }
 * {
 	box-sizing: border-box;
@@ -29,31 +52,41 @@ header {
 	margin-bottom: 3rem;
 	padding: 1rem 0;
 	@extend %wrap;
-	&:before {
-		background: $black;
-		content: '';
-		height: 0.75rem;
-		width: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
+	@extend %clearfix;
+	nav {
+		text-align: right;
+	}
+}
+
+footer {
+	font-size: 80%;
+	padding: 1rem 0;
+	margin-top: 8rem;
+	@extend %wrap;
+	@extend %clearfix;
+	div {
+		float: left;
+		margin-right: 3rem;
+	}
+	p {
+		line-height: 1.75em;
+		margin: 0;
+	}
+	a.bandcamp {
+		opacity: 0.8;
+		img {
+			width: 110px; // 50%
+		}
+		&:hover {
+			opacity: 0.9;
+		}
 	}
 	.logo {
-		float: left;
+		float: right;
 		img {
 			width: 120px; // 50%;
 		}
 	}
-	&:after {
-		clear: both;
-		content: '';
-		display: table;
-	}
-}
-
-nav {
-	float: right;
-	text-align: right;
 }
 
 main {
@@ -73,15 +106,6 @@ main img {
 }
 a.img {
 	border-bottom: none;
-}
-a.bandcamp {
-	opacity: 0.8;
-	img {
-		width: 221px; // 50%
-	}
-	&:hover {
-		opacity: 0.9;
-	}
 }
 
 section.announcement .wrapper + .wrapper {

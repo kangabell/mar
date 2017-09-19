@@ -8,10 +8,6 @@
 
 		</section>
 
-		<section>
-			<a href="https://m-a-r.bandcamp.com/" class="img bandcamp"><img src="img/bandcamp-logo.png" alt="Bandcamp logo" /></a>
-		</section>
-
 	</main>
 
 </template>
