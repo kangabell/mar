@@ -25,27 +25,44 @@ body {
 	box-sizing: border-box;
 }
 
-nav {
-	background: $black;
-	padding: 0 1rem;
-	text-align: right;
-}
-header h1 {
-	margin-top: 8rem;
-	margin-bottom: 4rem;
+header {
+	margin-bottom: 3rem;
+	padding: 1rem 0;
 	@extend %wrap;
+	&:before {
+		background: $black;
+		content: '';
+		height: 0.75rem;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.logo {
+		float: left;
+		img {
+			width: 120px; // 50%;
+		}
+	}
+	&:after {
+		clear: both;
+		content: '';
+		display: table;
+	}
+}
+
+nav {
+	float: right;
+	text-align: right;
 }
 
 main {
 	min-height: 20rem;
-	padding: 3rem 0.5rem;
+	padding: 3rem 0;
 	@extend %wrap;
 }
 section {
-	margin-bottom: 3rem;
-}
-p {
-	max-width: 38rem;
+	margin-bottom: 5rem;
 }
 ul{
 	margin-left: auto;
@@ -95,31 +112,33 @@ h1, h2, h4 {
 	text-transform: uppercase;
 }
 
+h2 {
+	margin-bottom: 2rem;
+}
+
 p + h3 {
 	margin-top: 2rem;
 }
 
 a {
+	color: $dark;
 	text-decoration: none;
 	transition: all 0.125s ease;
 }
 nav a {
-	color: $silver;
+	border-bottom: 0.125rem solid transparent;
+	padding-bottom: 0.75rem;
 	margin-left: 1rem;
 	text-transform: uppercase;
 	&:hover {
-		color: $white;
+		border-color: $dark;
 	}
 }
 a.router-link-active {
-	color: $gray;
+	border-color: $dark;
 	cursor: default;
-	&:hover {
-		color: $gray;
-	}
 }
 main a {
-	color: $dark;
 	border-bottom: 1px solid $blue;
 	&:hover {
 		border-color: $dark;
@@ -168,18 +187,23 @@ small, figcaption {
 
 blockquote {
 	font-size: 1.125rem;
-	margin: 3rem 0;
+	margin: 2rem 0;
 }
 
-section.shows {
-	strong, .note, .location {
-		display: block;
-	}
+section.shows .location {
+	display: block;
 }
-
-/*** MEDIA ***/
 
 iframe {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/*** HOMEPAGE ***/
+
+section.news {
+	background: $black;
+	color: $silver;
+	margin-top: 6rem;
+	padding: 3rem 1rem;
 }
