@@ -176,8 +176,7 @@ main a {
 ul {
 	list-style: none;
 	margin-left: 0;
-	padding-left: 0.75rem;
-	text-indent: -0.75rem;
+	padding-left: 0;
 }
 li + li {
 	margin-top: 1rem;
@@ -213,7 +212,7 @@ blockquote {
 	margin: 2rem 0;
 }
 
-section.shows .location {
+section.shows .location, section.shows .note {
 	display: block;
 }
 
