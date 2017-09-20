@@ -90,7 +90,7 @@ footer {
 }
 
 main {
-	min-height: 20rem;
+	min-height: 30rem;
 	padding: 3rem 0;
 	@extend %wrap;
 }
@@ -153,6 +153,18 @@ a {
 	text-decoration: none;
 	transition: all 0.125s ease;
 }
+.button {
+	background: $blue;
+	border: none;
+	color: $white;
+	display: inline-block;
+	margin-top: 1rem;
+	padding: 0 0.5em;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
 nav a {
 	border-bottom: 0.125rem solid transparent;
 	padding-bottom: 0.75rem;
@@ -228,4 +240,35 @@ section.news {
 	color: $silver;
 	margin-top: 6rem;
 	padding: 3rem 1rem;
+}
+
+
+/*** MERCH PAGE ***/
+
+section.merch {
+	div {
+		float: left;
+		margin-right: 1rem;
+		width: 23%;
+	}
+	a.img {
+		display: inline-block;
+		width: 100%;
+		img {
+			margin: 0;
+			width: 100%;
+		}
+	}
+	.title {
+		float: left;
+	}
+	.price {
+		float: right;
+		a {
+			margin: 0;
+		}
+	}
+	p {
+		margin: 0;
+	}
 }
