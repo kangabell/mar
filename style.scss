@@ -235,13 +235,21 @@ iframe {
 
 /*** HOMEPAGE ***/
 
-section.news {
-	background: $black;
-	color: $silver;
-	margin-top: 6rem;
-	padding: 3rem 1rem;
+main.home p {
+	max-width: 38rem;
 }
 
+/*** MUSIC PAGE ***/
+
+main.music {
+	text-align: center;
+	iframe {
+		border: 0;
+		width: 100%;
+		max-width: 350px; 
+		height: 470px;
+	}
+}
 
 /*** MERCH PAGE ***/
 

@@ -12,15 +12,3 @@
 	</main>
 
 </template>
-
-<style>
-
-	header .logo {
-		display: none;
-	}
-
-	p {
-		max-width: 38rem;
-	}
-
-</style>

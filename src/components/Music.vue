@@ -1,6 +1,6 @@
 <template>
 
-	<main>
+	<main class="music">
 
 		<section v-for="item in items">
 
@@ -30,18 +30,3 @@
 	}
 
 </script>
-
-<style>
-
-	iframe {
-		border: 0;
-		width: 100%;
-		max-width: 350px; 
-		height: 470px;
-	}
-
-	main {
-		text-align: center;
-	}
-
-</style>
