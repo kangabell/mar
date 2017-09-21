@@ -4,7 +4,7 @@
 
 		<section class="merch">
 
-			<div v-for="product in products">
+			<div v-for="product in products" class="col">
 
 				<a v-bind:href="product.url" class="img"><img v-bind:src="product.img" v-bind:alt="product.title" /></a>
 				<p class="title">{{ product.title }}</p>
