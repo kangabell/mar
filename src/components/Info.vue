@@ -5,17 +5,17 @@
 		<section>
 
 			<h2>Contact</h2>
-			<p>{{ email }}</p>
+			<p>{{ contact[2].value }}</p>
 			<p>
-				<span class="address">{{ address }}</span><br/>
-				<span class="city">{{ city }}</span>
-				<span class="state">{{ state }}</span>
-				<span class="zip">{{ zip }}</span>
+				<span class="address">{{ contact[0].value }}</span><br/>
+				<span class="city">{{ contact[1].value }}</span>
+				<span class="state">{{ contact[3].value }}</span>
+				<span class="zip">{{ contact[4].value }}</span>
 			</p>
 			<p><a href="https://m-a-r.bandcamp.com/" class="img bandcamp"><img src="img/bandcamp.png" alt="Bandcamp logo" />bandcamp</a></p>
 			<p>No, we are not on any "social media".</p>
 			<p>In case you were wondering, this website was made by <a href="http://kangabell.com">Kay</a>, and <a href="https://github.com/kangabell/mar">the code is open source</a>.</p>
-
+			
 		</section>
 
 	</main>
@@ -27,32 +27,13 @@
 	import {db} from '../firebase';
 
 	export default {
-
-		// data: {
-		// 		contact: {
-
-		// 			email: 'info (at) marpvd (com)',
-		// 			address: 'P.O. Box 23285',
-		// 			city: 'Providence',
-		// 			state: 'RI',
-		// 			zip: '02903'
-		// 		},
-		//   },
-
 		data() {
 			return {
 				paragraphs: {},
 				articles: {},
 				members: {},
 				vendors: {},
-				// contact: {
-
-					email: 'info (at) marpvd (com)',
-					address: 'P.O. Box 23285',
-					city: 'Providence',
-					state: 'RI',
-					zip: '02903'
-				// }
+				contact: {}
 			}
 		},
 		firebase: {
