@@ -2,7 +2,7 @@
 
 	<main>
 
-		<section>
+		<section class="contact">
 
 			<h2>Contact</h2>
 			<p>{{ contact[2].value }}</p>
@@ -12,10 +12,9 @@
 				<span class="state">{{ contact[3].value }}</span>
 				<span class="zip">{{ contact[4].value }}</span>
 			</p>
-			<p><a href="https://m-a-r.bandcamp.com/" class="img bandcamp"><img src="img/bandcamp.png" alt="Bandcamp logo" />bandcamp</a></p>
-			<p>No, we are not on any "social media".</p>
-			<p>In case you were wondering, this website was made by <a href="http://kangabell.com">Kay</a>, and <a href="https://github.com/kangabell/mar">the code is open source</a>.</p>
-			
+			<p><a class="bandcamp img" href="https://m-a-r.bandcamp.com/"><span class="icon"></span> <span class="text">bandcamp</span></a></p>
+			<p class="small">this site is <a href="https://github.com/kangabell/mar">open source</a>.</p>
+
 		</section>
 
 	</main>

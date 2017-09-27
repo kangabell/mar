@@ -221,7 +221,7 @@ strong {
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 }
-small, figcaption {
+small, p.small, figcaption {
 	font-size: 0.75em;
 }
 
@@ -297,5 +297,34 @@ section.merch {
 		margin-right: 1%;
 		margin-left: 1%;
 		width: 23%;
+	}
+}
+
+/*** INFO PAGE ***/
+
+section.contact {
+	a.bandcamp {
+		.text {
+			border-bottom: 1px solid $blue;
+		}
+		.icon {
+			opacity: 0.8;
+			&:before {
+				background-image: url('../img/bandcamp.png');
+				background-size: contain;
+				background-repeat: no-repeat;
+				content: '';
+				display: inline-block;
+				height: 1.5em;
+				width: 1.5em;
+				vertical-align: middle;
+			}
+		}
+		&:hover .icon {
+			opacity: 1;
+		}
+		&:hover .text {
+			border-color: $dark;
+		}
 	}
 }
