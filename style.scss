@@ -32,16 +32,15 @@ body {
 		background: $black;
 		content: '';
 		height: 0.75rem;
+		position: fixed;
 		width: 100%;
 		left: 0;
 	}
 	&:before {
 		top: 0;
-		position: fixed;
 	}
 	&:after {
 		bottom: 0;
-		position: absolute;
 	}
 }
 * {
@@ -61,37 +60,6 @@ header {
 		text-align: right;
 		@extend %wrap;
 		@extend %clearfix;
-	}
-}
-
-footer {
-	font-size: 80%;
-	padding: 1rem 0;
-	margin-top: 8rem;
-	@extend %wrap;
-	@extend %clearfix;
-	div {
-		float: left;
-		margin-right: 3rem;
-	}
-	p {
-		line-height: 1.75em;
-		margin: 0;
-	}
-	a.bandcamp {
-		opacity: 0.8;
-		img {
-			width: 110px; // 50%
-		}
-		&:hover {
-			opacity: 0.9;
-		}
-	}
-	.logo {
-		float: right;
-		img {
-			width: 120px; // 50%;
-		}
 	}
 }
 
@@ -260,6 +228,7 @@ main.music {
 /*** MERCH PAGE ***/
 
 section.merch {
+	@extend %clearfix;
 	a.img {
 		display: inline-block;
 		width: 100%;
