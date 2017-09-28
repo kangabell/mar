@@ -55,9 +55,9 @@ header {
 	width: 100%;
 	nav {
 		background-color: $white;
-		height: 8rem;
+		height: 4rem;
 		padding: 0.75rem 0;
-		text-align: right;
+		text-align: center;
 		@extend %wrap;
 		@extend %clearfix;
 	}
@@ -65,7 +65,7 @@ header {
 
 main {
 	min-height: 36rem;
-	padding: 10rem 0 3rem;
+	padding: 8rem 1rem 3rem;
 	@extend %wrap;
 }
 section {
@@ -75,9 +75,6 @@ ul{
 	margin-left: auto;
 	margin-right: auto;
 }
-main img {
-	margin: 2em auto;
-}
 a.img {
 	border-bottom: none;
 }
@@ -85,6 +82,19 @@ a.img {
 section.announcement .wrapper + .wrapper {
 	margin-top: 2rem;
 }
+
+@media only screen and (min-width: 600px) {
+	main {
+		padding-top: 10rem;
+	}
+	header nav {
+		height: 8rem;
+		text-align: right;
+	}
+
+}
+
+
 
 /*** TYPOGRAPHY ***/
 
@@ -98,7 +108,7 @@ section.announcement .wrapper + .wrapper {
 body {
 	color: $black;
 	font-family: Optima, 'CG Omega', 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 16px;
+	font-size: 14px;
 	letter-spacing: 0.025em;
 	line-height: 1.75em;
 }
@@ -142,8 +152,10 @@ a {
 nav a {
 	border-bottom: 0.125rem solid transparent;
 	padding-bottom: 0.75rem;
-	margin-left: 1rem;
 	text-transform: uppercase;
+	+ a {
+		margin-left: 0.75rem;
+	}
 	&:hover {
 		border-color: $dark;
 	}
@@ -194,7 +206,6 @@ small, p.small, figcaption {
 }
 
 blockquote {
-	font-size: 1.125rem;
 	margin: 2rem 0;
 }
 
@@ -207,10 +218,35 @@ iframe {
 	margin-right: auto;
 }
 
+@media only screen and (min-width: 600px) {
+	body {
+		font-size: 16px;
+	}
+	blockquote {
+		font-size: 1.125rem;
+	}
+	nav a + a {
+		margin-left: 1rem;
+	}
+}
+
 /*** HOMEPAGE ***/
 
-main.home p {
-	max-width: 38rem;
+main.home {
+	p {
+		max-width: 38rem;
+	}
+	img {
+		margin: 2rem auto 0;
+		width: 180px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	main.home img {
+		margin-bottom: 2rem;
+		width: auto;
+	}
 }
 
 /*** MUSIC PAGE ***/
