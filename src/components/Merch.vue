@@ -20,9 +20,13 @@
 
 <script>
 
+	import axios from 'axios'
+	import VueAxios from 'vue-axios'
+
 	export default {
 		data() {
 			return {
+				status: '',
 				products: [
 					{
 						title: 'Demo Cassette',
@@ -69,7 +73,24 @@
 
 				]
 			}
+		},
+		created: function() {
+			this.loadMerch();
+		},
+		methods: {
+
+			loadMerch: function() {
+				axios({
+				  method: 'post',
+				  url: 'https://bandcamp.com/api/account/1/my_bands',
+				  data: {
+				    client_id: 114,
+				    client_secret: 'NoYj0cxZYbXkIUnHE9marFxK9Hq3il8FAZJ1wpqVJks=',
+				  }
+				});
+			}
+			
 		}
-	}
+	};
 
 </script>
