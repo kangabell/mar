@@ -258,13 +258,34 @@ main.home {
 
 /*** MUSIC PAGE ***/
 
-main.music {
+section.album {
 	text-align: center;
+	img {
+		display: none;
+	}
+	.tracklist {
+		height: 350px;
+	}
 	iframe {
-		border: 0;
+		border: none;
+		height: 100%;
 		width: 100%;
-		max-width: 350px; 
-		height: 470px;
+	}
+
+}
+
+@media only screen and (min-width: 700px) {
+	section.album {
+		display: flex;
+		img {
+			display: block;
+			flex: 1 0 0;
+			height: 350px;
+			width: 350px;
+		}
+		.tracklist {
+			flex: 2 0 0;
+		}
 	}
 }
 

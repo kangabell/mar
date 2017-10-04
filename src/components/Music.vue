@@ -2,9 +2,13 @@
 
 	<main class="music">
 
-		<section v-for="item in items">
+		<section v-for="album in albums" class="album">
 
-			<iframe v-if="item.type === 'iframe'" v-bind:src=" 'https://bandcamp.com/EmbeddedPlayer/album=' + item.albumID + '/size=large/bgcol=edeae6/linkcol=76939e/tracklist=true' " seamless><a v-bind:href="item.url">{{ item.title }}</a></iframe>
+			<img v-bind:src="album.img" v-bind:alt="album.title" />
+
+			<div class="tracklist">
+				<iframe v-bind:src=" 'https://bandcamp.com/EmbeddedPlayer/album=' + album.id + '/size=large/bgcol=edeae6/linkcol=76939e/tracklist=true/artwork=none/transparent=true' " seamless><a v-bind:href="album.url">{{ album.title }}</a></iframe>
+			</div>
 
 		</section>
 
@@ -19,12 +23,12 @@
 	export default {
 		data() {
 			return {
-				items: {}
+				albums: {}
 			}
 		},
 		firebase: {
-			items: {
-				source: db.ref('items'),
+			albums: {
+				source: db.ref('albums'),
 			}
 		}
 	}
