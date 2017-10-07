@@ -79,13 +79,41 @@
 		},
 		methods: {
 
+			// we need to use the client secret here. i think this should not be sent
+			// to people accessing our website. will vue keep this server-side?
+			//
+			// reponse to this will be:
+			//
+			//   {access_token: --, expires_in: 3600, refresh_token: --, ok: true, token_type: bearer}
+			//
+			// we need to save access_token (and probably everything else too).
+			// access_tokens have to be refreshed every hour (every 3600 seconds).
+			getToken: function() {
+				axios({
+				  method: 'post',
+				  url: 'https://bandcamp.com/oauth_token',
+				  data: {
+				    grant_type: 'client_credentials',
+				    client_id: 114,
+				    client_secret: client_secret /* fixme */
+				  }
+				});
+			},
+
+			// before calling this, we need to set up or pass in an access_token somehow.
+			// this will look like "3382694905.114.1507268915.OxDdAp6xxlH93XGHmZLbZDxqIlg="
+			// and we get one from 'getToken'. we will have to get (or refresh) this token
+			// at least once an hour.
 			loadMerch: function() {
 				axios({
 				  method: 'post',
-				  url: 'https://bandcamp.com/api/account/1/my_bands',
+				  url: 'https://bandcamp.com/api/merchorders/1/get_merch_details',
+				  headers: {
+				    Authorization: 'Bearer ' + access_token /* fixme */
+				  }
 				  data: {
-				    client_id: 114,
-				    client_secret: 'NoYj0cxZYbXkIUnHE9marFxK9Hq3il8FAZJ1wpqVJks=',
+				    band_id: 2352218958,
+				    start_time: "2015-01-01"
 				  }
 				});
 			}
