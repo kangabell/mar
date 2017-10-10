@@ -1,4 +1,6 @@
 <template>
+<transition appear>
+	
 
 	<main class="home">
 
@@ -11,4 +13,5 @@
 
 	</main>
 
+</transition>
 </template>

@@ -1,4 +1,5 @@
 <template>
+<transition appear>
 
 	<main class="music">
 
@@ -15,6 +16,7 @@
 
 	</main>
 
+</transition>
 </template>
 
 <script>

@@ -1,4 +1,5 @@
 <template>
+<transition appear>
 
 	<main>
 
@@ -23,6 +24,7 @@
 
 	</main>
 
+</transition>
 </template>
 
 <script>
