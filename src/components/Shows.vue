@@ -2,26 +2,29 @@
 
 	<main>
 
-		<section class="announcement">
-			<div class="wrapper" v-for="announcement in announcements">
-				<p v-if="announcement.subtitle">{{ announcement.subtitle }}</p>
-				<h2 v-if="announcement.title">{{ announcement.title }}</h2>
-				<p v-html="announcement.content"></p>
-			</div>
-		</section>
-
 		<section class="shows">
 			<h2>Upcoming Shows</h2>
 			<ul>
-				<li v-for="show in orderedShows" v-if="show.archive === false">
+				<li v-for="show in chronShows" v-if="show.archive === false">
 					<strong>{{ show.date | formatDate }}</strong>
 					<span v-if="show.note" class="note">{{ show.note }}</span>
+					<span class="location">{{ show.location }}</span>
 					<span v-if="show.bands" v-for="(band, index) in show.bands" class="band">
 						<a v-if="band.url" v-bind:href="band.url">{{ band.name }}</a><span v-else>{{ band.name }}</span><span v-if="index+1 < show.bands.length">, </span>
 					</span>
-					<span class="location">{{ show.location }}</span>
 				</li>
 			</ul>
+		</section>
+
+		<section>
+
+			<h2>Past Shows</h2>
+
+			<p v-for="show in reverseChronShows" v-if="show.archive !== false">
+				<strong>{{ show.date | formatDate }}</strong> &#151; 
+				<span v-if="show.bands" v-for="(band, index) in show.bands">{{ band.name }}<span v-if="index+1 < show.bands.length">, </span></span> <!-- comma-separated list of bands -->
+				@ {{ show.location }}
+			</p>
 		</section>
 
 	</main>
@@ -50,8 +53,11 @@
 			}
 		},
 		computed: {
-		  orderedShows: function () {
+		  chronShows: function () {
 		    return _.orderBy(this.shows, 'date')
+		  },
+		  reverseChronShows: function () {
+		    return _.orderBy(this.shows, 'date').reverse();
 		  }
 		},
 		filters: {
@@ -62,11 +68,3 @@
 	}
 
 </script>
-
-<style>
-
-	main {
-		padding-top: 0;
-	}
-
-</style>

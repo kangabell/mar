@@ -2,51 +2,20 @@
 
 	<main>
 
-		<section class="about">
-
-			<h2>About</h2>
-			<div v-for="paragraph in paragraphs">
-				<p v-html="paragraph.text"></p>
-			</div>
-
-			<br/>
-
-			<h3>Press</h3>
-			<div v-for="article in articles">
-				<p><a v-bind:href="article.link">{{ article.title }}</a></p>
-			</div>
-
-			<br/>
-
-			<h3>Members</h3>
-			<div v-for="member in members">
-				<p><a v-bind:href="member.link">{{ member.name }}</a></p>
-			</div>
-
-		</section>
-
-		<section class="vendors">
-			<h2>Vendors</h2>
-			<ul>
-				<li v-for="vendor in vendors">
-					<a v-if="vendor.link" v-bind:href="vendor.link">{{ vendor.name }}</a>
-					<span v-else>{{ vendor.name }}</span>
-				</li>
-			</ul>
-		</section>
-
-		<section>
+		<section class="contact" itemscope itemtype="http://schema.org/MusicGroup">
 
 			<h2>Contact</h2>
-			<div v-for="contact in contacts">
-				<p>{{ contact.info }}</p>
-			</div>
+			<p itemprop="email">{{ contact[2].value }}</p>
+			<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+				<span class="address" itemprop="streetAddress">{{ contact[0].value }}</span><br/>
+				<span class="city" itemprop="addressLocality">{{ contact[1].value }}</span>
+				<span class="state" itemprop="addressRegion">{{ contact[3].value }}</span>
+				<span class="zip" itemprop="postalCode">{{ contact[4].value }}</span>
+			</p>
+			<p><a class="bandcamp img" href="https://m-a-r.bandcamp.com/"><span class="icon"></span> <span class="text">bandcamp</span></a></p>
+			<p class="small">this site is <a href="https://github.com/kangabell/mar">open source</a>.</p>
 
 		</section>
-
-		<footer>
-			<a href="https://github.com/kangabell/mar">code: open source</a>
-		</footer>
 
 	</main>
 
@@ -57,14 +26,13 @@
 	import {db} from '../firebase';
 
 	export default {
-
 		data() {
 			return {
 				paragraphs: {},
 				articles: {},
 				members: {},
 				vendors: {},
-				contacts: {}
+				contact: {}
 			}
 		},
 		firebase: {
@@ -80,8 +48,8 @@
 			vendors: {
 				source: db.ref('vendors'),
 			},
-			contacts: {
-				source: db.ref('contacts'),
+			contact: {
+				source: db.ref('contact'),
 			}
 		}
 	}
