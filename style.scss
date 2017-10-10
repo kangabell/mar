@@ -151,15 +151,15 @@ a {
 	transition: all 0.125s ease;
 }
 .button {
-	background-color: $blue;
-	border: none;
-	color: $white;
+	border: 0.125rem solid ($blue);
+	color: darken($blue,10);
 	display: inline-block;
 	margin-top: 1rem;
 	padding: 0.5em 1.5em;
 	text-transform: uppercase;
 	&:hover {
-		background-color: darken($blue,5);
+		border-color: $black;
+		color: $black;
 		cursor: pointer;
 	}
 }
@@ -336,7 +336,7 @@ section.merch {
 		margin: 0;
 	}
 	.title {
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		letter-spacing: 0.05em;
 		margin-bottom: 1rem;
 		text-transform: uppercase;
@@ -348,17 +348,18 @@ section.merch {
 		margin-bottom: 2rem;
 		@extend %clearfix;
 		&.featured .title {
-			font-size: 3rem;
+			font-size: 2.25rem;
 		}
 	}
 	.description {
 		display: none;
 	}
-	.more {
-		margin-top: 2rem;
-		text-align: center;
-		width: 100%;
-	}
+}
+
+.more {
+	margin: 2rem 0;
+	text-align: center;
+	width: 100%;
 }
 
 
@@ -367,6 +368,13 @@ section.merch {
 		float: left;
 		padding: 1rem;
 		width: 50%;
+		.title {
+			font-size: 1.5rem;
+		}
+		.description {
+			display: block;
+			margin-bottom: 1rem;
+		}
 		&.featured {
 			width: 100%;
 			.img, .text {
@@ -376,11 +384,13 @@ section.merch {
 			.text {
 				padding: 2rem;
 			}
+			.title {
+				font-size: 3rem;
+			}
 		}
-		.description {
-			display: block;
-			margin-bottom: 1rem;
-		}
+	}
+	.more {
+		margin-top: 2rem;
 	}
 }
 

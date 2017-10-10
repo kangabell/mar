@@ -15,11 +15,11 @@
 					
 			</div>
 
-			<div class="more">
-				<a class="button" v-bind:href="merchURL">More Merch</a>
-			</div>
-
 		</section>
+
+		<div class="more">
+			<a class="button" v-bind:href="merchURL">More Merch</a>
+		</div>
 
 	</main>
 
