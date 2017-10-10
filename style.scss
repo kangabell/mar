@@ -151,13 +151,15 @@ a {
 	transition: all 0.125s ease;
 }
 .button {
-	background: $blue;
+	background-color: $blue;
 	border: none;
 	color: $white;
 	display: inline-block;
 	margin-top: 1rem;
-	padding: 0 0.5em;
+	padding: 0.5em 1.5em;
+	text-transform: uppercase;
 	&:hover {
+		background-color: darken($blue,5);
 		cursor: pointer;
 	}
 }
@@ -236,7 +238,7 @@ iframe {
 		font-size: 16px;
 	}
 	h2 {
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 	blockquote {
 		font-size: 1.125rem;
@@ -330,35 +332,65 @@ section.merch {
 			width: 100%;
 		}
 	}
-	.title {
-		float: left;
-	}
-	.price {
-		float: right;
-		a {
-			margin: 0;
-		}
-	}
 	p {
 		margin: 0;
 	}
+	.title {
+		font-size: 1.5rem;
+		letter-spacing: 0.05em;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+	}
+	.text {
+		padding: 1rem;
+	}
+	.product {
+		margin-bottom: 2rem;
+		@extend %clearfix;
+		&.featured .title {
+			font-size: 3rem;
+		}
+	}
+	.description {
+		display: none;
+	}
+	.more {
+		margin-top: 2rem;
+		text-align: center;
+		width: 100%;
+	}
 }
 
+
 @media only screen and (min-width: 600px) {
-	div.col {
+	section.merch .product {
 		float: left;
-		margin-right: 2%;
-		margin-left: 2%;
-		margin-bottom: 2rem;
-		width: 46%;
+		padding: 1rem;
+		width: 50%;
+		&.featured {
+			width: 100%;
+			.img, .text {
+				float: left;
+				width: 50%;
+			}
+			.text {
+				padding: 2rem;
+			}
+		}
+		.description {
+			display: block;
+			margin-bottom: 1rem;
+		}
 	}
 }
 
 @media only screen and (min-width: 1000px) {
-	div.col {
-		margin-right: 1%;
-		margin-left: 1%;
-		width: 23%;
+	section.merch .product {
+		padding: 1rem 0;
+		.img, .text {
+			float: left;
+			width: 50%;
+		}
 	}
 }
 
