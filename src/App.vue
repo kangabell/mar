@@ -8,20 +8,10 @@
 <script>
 
 import header from './components/header.vue';
-import home from './components/home.vue';
-import shows from './components/shows.vue';
-import music from './components/music.vue';
-import merch from './components/merch.vue';
-import info from './components/info.vue';
 
 export default {
   components: {
     'app-header': header,
-    'home': home,
-    'shows': shows,
-    'music': music,
-    'merch': merch,
-    'info': info
   }
 }
 
