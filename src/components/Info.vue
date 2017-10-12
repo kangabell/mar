@@ -6,12 +6,12 @@
 		<section class="contact" itemscope itemtype="http://schema.org/MusicGroup">
 
 			<h2>Contact</h2>
-			<p itemprop="email">{{ contact[2].value }}</p>
+			<p itemprop="email">{{ contact.email }}</p>
 			<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-				<span class="address" itemprop="streetAddress">{{ contact[0].value }}</span><br/>
-				<span class="city" itemprop="addressLocality">{{ contact[1].value }}</span>
-				<span class="state" itemprop="addressRegion">{{ contact[3].value }}</span>
-				<span class="zip" itemprop="postalCode">{{ contact[4].value }}</span>
+				<span class="address" itemprop="streetAddress">{{ contact.address }}</span><br/>
+				<span class="city" itemprop="addressLocality">{{ contact.city }}</span>
+				<span class="state" itemprop="addressRegion">{{ contact.state }}</span>
+				<span class="zip" itemprop="postalCode">{{ contact.zip }}</span>
 			</p>
 			<p><a class="bandcamp img" href="https://m-a-r.bandcamp.com/"><span class="icon"></span> <span class="text">bandcamp</span></a></p>
 			<p class="small">this site is <a href="https://github.com/kangabell/mar">open source</a>.</p>
@@ -52,6 +52,7 @@
 			},
 			contact: {
 				source: db.ref('contact'),
+				asObject: true
 			}
 		}
 	}
