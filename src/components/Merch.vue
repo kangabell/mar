@@ -36,7 +36,7 @@
 				products: [
 					{
 						title: 'T-Shirt',
-						img: 'https://f4.bcbits.com/img/0010698788_36.jpg',
+						img: 'https://f4.bcbits.com/img/0011520567_36.jpg',
 						url: 'https://m-a-r.bandcamp.com/merch/t-shirt',
 						price: 10,
 						featured: true,
@@ -46,7 +46,7 @@
 						title: '"Fill Your Lungs" Cassette',
 						img: 'https://f4.bcbits.com/img/0010427896_36.jpg',
 						url: 'https://m-a-r.bandcamp.com/album/fill-your-lungs',
-						price: 2
+						price: 8
 					},
 					{
 						title: '"Trust in Nothing" Cassette',
@@ -58,7 +58,7 @@
 						title: 'Patch',
 						img: 'https://f4.bcbits.com/img/0010527769_36.jpg',
 						url: 'https://m-a-r.bandcamp.com/merch/patch',
-						price: 2,
+						price: 1,
 						featured: true,
 						description: 'Silkscreen patch. Handmade – print quality varies. material may also vary slightly.'
 					},
@@ -70,7 +70,7 @@
 					},
 					{
 						title: '"Murmurs, Chants, and Screams" VolII',
-						img: 'https://f4.bcbits.com/img/0011503215_36.jpg',
+						img: 'https://f4.bcbits.com/img/0011520619_36.jpg',
 						url: 'https://m-a-r.bandcamp.com/merch/murmurs-chants-and-screams-vol-ii',
 						price: 3
 					}
