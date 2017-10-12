@@ -1,7 +1,6 @@
 # MAR
 
-> website for the band mar, by kay belardinelli. 
-> marpvd.com
+> website for the band mar. built with vuejs. by kay belardinelli.
 
 
 ## Build Setup
@@ -16,5 +15,3 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-
-more info: [docs for vue-loader](http://vuejs.github.io/vue-loader).
