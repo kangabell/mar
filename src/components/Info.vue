@@ -3,7 +3,7 @@
 
 	<main>
 
-		<section class="info" itemscope itemtype="http://schema.org/MusicGroup">
+		<section class="contact" itemscope itemtype="http://schema.org/MusicGroup">
 
 			<h2>Contact</h2>
 			<p itemprop="email">{{ info.email }}</p>
