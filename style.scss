@@ -24,6 +24,8 @@ $black: #303936;
 	}
 }
 
+/* Fade-in on load – connected to <transition appear> element */
+
 .v-enter-active, .v-leave-active {
   transition: opacity .275s
 }
@@ -115,7 +117,6 @@ section.announcement .wrapper + .wrapper {
 		height: 8rem;
 	}
 }
-
 
 
 /*** TYPOGRAPHY ***/
@@ -415,29 +416,25 @@ section.merch {
 
 /*** INFO PAGE ***/
 
-section.contact {
-	a.bandcamp {
-		.text {
-			border-bottom: 1px solid $blue;
-		}
-		.icon {
-			opacity: 0.8;
-			&:before {
-				background-image: url('../assets/img/bandcamp.png');
-				background-size: contain;
-				background-repeat: no-repeat;
-				content: '';
-				display: inline-block;
-				height: 1.5em;
-				width: 1.5em;
-				vertical-align: middle;
-			}
-		}
-		&:hover .icon {
-			opacity: 1;
-		}
-		&:hover .text {
-			border-color: $dark;
-		}
+section.contact a.bandcamp {
+	.text {
+		border-bottom: 1px solid $blue;
+	}
+	.icon:before {
+		background-image: url('../assets/img/bandcamp.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		content: '';
+		display: inline-block;
+		height: 1.5em;
+		opacity: 0.8;
+		width: 1.5em;
+		vertical-align: middle;
+	}
+	&:hover .icon:before {
+		opacity: 1;
+	}
+	&:hover .text {
+		border-color: $dark;
 	}
 }
