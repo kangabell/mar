@@ -7,11 +7,11 @@
 
 			<div v-for="product in products" class="product" v-bind:class="{ featured: product.featured }">
 
-				<a v-bind:href="info.bandcampURL + product.path" class="img"><img v-bind:src="product.img" v-bind:alt="product.title" /></a>
+				<a v-bind:href="buildURL(product)" class="img"><img v-bind:src="product.img" v-bind:alt="product.title" /></a>
 				<div class="text">
 					<p class="title">{{ product.title }}</p>
 					<p class="description" v-if="product.description">{{ product.description }}</p>
-					<p class="price"><a v-bind:href="info.bandcampURL + product.path">&#36;{{ product.price }}</a></p>
+					<p class="price"><a v-bind:href="buildURL(product)">&#36;{{ product.price }}</a></p>
 				</div>
 					
 			</div>
@@ -45,6 +45,11 @@
 			info: {
 				source: db.ref('info'),
 				asObject: true
+			}
+		},
+		methods: {
+			buildURL: function(product) {
+				return this.info.bandcampURL + '/' + product.type + '/' + product.slug		
 			}
 		}
 	}
