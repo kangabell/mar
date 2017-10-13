@@ -320,13 +320,19 @@ section.album {
 		display: flex;
 		img {
 			display: block;
-			flex: 1 0 0;
+			flex: 2 0 0;
 			height: 350px;
 			width: 350px;
 		}
 		.tracklist {
 			flex: 2 0 0;
 		}
+	}
+}
+
+@media only screen and (min-width: 1000px) {
+	section.album img {
+		flex: 1 0 0;
 	}
 }
 
