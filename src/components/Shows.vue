@@ -7,7 +7,14 @@
 			<h2>Upcoming Shows</h2>
 			<ul>
 				<li v-for="show in chronShows" v-if="show.archive === false">
-					<strong>{{ show.date | formatDate }}</strong>
+					<strong>
+						<span v-if="show.dateEnd">
+							{{ show.date | formatDateShort }} &#45; {{ show.dateEnd | formatDate }}
+						</span>
+						<span v-else>
+							{{ show.date | formatDate }}
+						</span>
+					</strong>
 					<span v-if="show.note" class="note">{{ show.note }}</span>
 					<span class="location">{{ show.location }}</span>
 					<span v-if="show.bands" v-for="(band, index) in show.bands" class="band">
@@ -65,7 +72,10 @@
 		filters: {
 			formatDate: function(value) {
 				if (value) return moment(String(value)).format('MMMM D YYYY')
-		  	}
+			},
+			formatDateShort: function(value) {
+				if (value) return moment(String(value)).format('MMMM D')
+			}
 		}
 	}
 
