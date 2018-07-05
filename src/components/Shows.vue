@@ -8,12 +8,7 @@
 			<ul>
 				<li v-for="show in chronShows" v-if="show.archive === false">
 					<strong>
-						<span v-if="show.dateEnd">
-							{{ show.date | formatDateShort }} &#45; {{ show.dateEnd | formatDate }}
-						</span>
-						<span v-else>
-							{{ show.date | formatDate }}
-						</span>
+						{{ formatDates(show.date, show.dateEnd) }}
 					</strong>
 					<span v-if="show.note" class="note">{{ show.note }}</span>
 					<span class="location">{{ show.location }}</span>
@@ -72,12 +67,27 @@
 		    return _.orderBy(this.shows, 'date').reverse();
 		  }
 		},
+		methods: {
+			formatDates(start, end) {
+				if (!start) return '';
+				if (!end) return formatDate(start);
+				const d1 = moment(String(start));
+				const d2 = moment(String(end));
+				let prefix;
+				let suffix;
+				if (d2.year !== d1.year) {
+					prefix = d1.format('MMMM D YYYY');
+					suffix = d2.format('MMMM D YYYY');
+				} else {
+					prefix = d1.format('MMMM D');
+					suffix = d2.format(d2.month !== d1.month ? 'MMMM D YYYY' : 'D YYYY');
+				}
+				return prefix + " &#45 " + suffix;
+			}
+		},
 		filters: {
 			formatDate: function(value) {
 				if (value) return moment(String(value)).format('MMMM D YYYY')
-			},
-			formatDateShort: function(value) {
-				if (value) return moment(String(value)).format('MMMM D')
 			}
 		}
 	}
