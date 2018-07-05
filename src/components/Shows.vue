@@ -30,7 +30,10 @@
 
 			<p v-for="show in reverseChronShows" v-if="show.archive !== false">
 				<strong>{{ show.date | formatDate }}</strong> &#151; 
-				<span v-if="show.bands" v-for="(band, index) in show.bands">{{ band.name }}<span v-if="index+1 < show.bands.length">, </span></span> <!-- comma-separated list of bands -->
+				<span v-if="show.note">{{ show.note }}</span>
+				<span v-else>
+					<span v-if="show.bands" v-for="(band, index) in show.bands">{{ band.name }}<span v-if="index+1 < show.bands.length">, </span></span> <!-- comma-separated list of bands -->
+				</span>
 				@ {{ show.location }}
 			</p>
 		</section>
