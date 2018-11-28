@@ -3,27 +3,6 @@
 
 	<main>
 
-		<section class="shows">
-			<h2>Upcoming Shows</h2>
-			<ul>
-				<li v-for="show in chronShows" v-if="show.archive === false">
-					<strong>
-						<span v-if="show.dateEnd">
-							{{ show.date | formatDateShort }} &#45; {{ show.dateEnd | formatDate }}
-						</span>
-						<span v-else>
-							{{ show.date | formatDate }}
-						</span>
-					</strong>
-					<span v-if="show.note" class="note">{{ show.note }}</span>
-					<span class="location">{{ show.location }}</span>
-					<span v-if="show.bands" v-for="(band, index) in show.bands" class="band">
-						<a v-if="band.url" v-bind:href="band.url">{{ band.name }}</a><span v-else>{{ band.name }}</span><span v-if="index+1 < show.bands.length">, </span>
-					</span>
-				</li>
-			</ul>
-		</section>
-
 		<section>
 
 			<h2>Past Shows</h2>
