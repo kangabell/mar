@@ -274,8 +274,10 @@ iframe {
 /*** HOMEPAGE ***/
 
 main.home {
-	p {
+	.quote {
 		max-width: 38rem;
+		min-height: 10rem;
+		position: relative;
 	}
 	img {
 		margin: 2rem auto 0;
