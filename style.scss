@@ -7,6 +7,8 @@ $gray: #979892;
 $dark: #424c49;
 $blue: #6e9eb1;
 $black: #303936;
+$red: #994142;
+$tan: #D8C0A4;
 
 /*** UTILITIES ***/
 
@@ -41,7 +43,7 @@ body {
 	overflow-y: scroll; // keep scrollbar in place from page to page
 	position: relative;
 	&:before, &:after { // dark bars
-		background: $black;
+		background: $red;
 		content: '';
 		height: 0.75rem;
 		position: fixed;
@@ -161,15 +163,14 @@ a {
 	transition: all 0.125s ease;
 }
 .button {
-	border: 0.125rem solid ($blue);
-	color: darken($blue,10);
+	border: 0.125rem solid ($tan);
 	display: inline-block;
 	margin-top: 1rem;
 	padding: 0.5em 1.5em;
 	text-transform: uppercase;
-	&:hover {
+	&:hover,
+	&:focus {
 		border-color: $black;
-		color: $black;
 		cursor: pointer;
 	}
 }
@@ -181,7 +182,8 @@ nav a {
 	+ a {
 		margin-left: 0.75rem;
 	}
-	&:hover {
+	&:hover,
+	&:focus {
 		border-color: $dark;
 	}
 }
@@ -190,8 +192,9 @@ a.router-link-active {
 	cursor: default;
 }
 main a {
-	border-bottom: 1px solid $blue;
-	&:hover {
+	border-bottom: 0.125rem solid $tan;
+	&:hover,
+	&:focus {
 		border-color: $dark;
 	}
 }
@@ -354,6 +357,7 @@ section.merch {
 	.title {
 		font-size: 1.25rem;
 		letter-spacing: 0.05em;
+		line-height: 1;
 		margin-bottom: 1rem;
 		text-transform: uppercase;
 	}
@@ -424,7 +428,7 @@ section.merch {
 
 section.contact a.bandcamp {
 	.text {
-		border-bottom: 1px solid $blue;
+		border-bottom: 0.125rem solid $tan;
 	}
 	.icon:before {
 		background-image: url('../assets/img/bandcamp.png');
@@ -437,10 +441,12 @@ section.contact a.bandcamp {
 		width: 1.5em;
 		vertical-align: middle;
 	}
-	&:hover .icon:before {
+	&:hover .icon:before,
+	&:focus .icon:before {
 		opacity: 1;
 	}
-	&:hover .text {
+	&:hover .text,
+	&:focus .text {
 		border-color: $dark;
 	}
 }
