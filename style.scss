@@ -10,6 +10,8 @@ $black: #303936;
 $red: #994142;
 $tan: #D8C0A4;
 
+$border-width: 0.125rem;
+
 /*** UTILITIES ***/
 
 %wrap {
@@ -90,9 +92,6 @@ ul{
 	margin-left: auto;
 	margin-right: auto;
 }
-a.img {
-	border-bottom: none;
-}
 
 section.announcement .wrapper + .wrapper {
 	margin-top: 2rem;
@@ -163,7 +162,7 @@ a {
 	transition: all 0.125s ease;
 }
 .button {
-	border: 0.125rem solid ($tan);
+	border: $border-width solid ($tan);
 	display: inline-block;
 	margin-top: 1rem;
 	padding: 0.5em 1.5em;
@@ -176,7 +175,7 @@ a {
 }
 
 nav a {
-	border-bottom: 0.125rem solid transparent;
+	border-bottom: $border-width solid transparent;
 	padding-bottom: 0.75rem;
 	text-transform: uppercase;
 	+ a {
@@ -192,7 +191,7 @@ a.router-link-active {
 	cursor: default;
 }
 main a {
-	border-bottom: 0.125rem solid $tan;
+	border-bottom: $border-width solid $tan;
 	&:hover,
 	&:focus {
 		border-color: $dark;
@@ -343,12 +342,28 @@ section.album {
 
 section.merch {
 	@extend %clearfix;
-	a.img {
-		display: inline-block;
-		width: 100%;
+}
+
+.product {
+	border: none;
+	margin-bottom: 2rem;
+	@extend %clearfix;
+	.img {
+		position: relative;
 		img {
-			margin: 0;
+			display: block;
 			width: 100%;
+		}
+		&:after { // inset border
+			border: ($border-width * 2) solid transparent;
+			content: '';
+			display: block;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			transition: all 0.125s ease;;
 		}
 	}
 	p {
@@ -361,18 +376,24 @@ section.merch {
 		margin-bottom: 1rem;
 		text-transform: uppercase;
 	}
-	.text {
-		padding: 1rem;
-	}
-	.product {
-		margin-bottom: 2rem;
-		@extend %clearfix;
-		&.featured .title {
-			font-size: 2.25rem;
-		}
-	}
 	.description {
 		display: none;
+	}
+	.text {
+		padding: 1rem;
+		transition: all 0.125s ease;;
+	}
+	&.featured .title {
+		font-size: 2.25rem;
+	}
+	&:hover,
+	&:focus {
+		.text {
+			color: $red;
+		}
+		.img:after {
+			border-color: $red;
+		}
 	}
 }
 
@@ -428,7 +449,7 @@ section.merch {
 
 section.contact a.bandcamp {
 	.text {
-		border-bottom: 0.125rem solid $tan;
+		border-bottom: $border-width solid $tan;
 	}
 	.icon:before {
 		background-image: url('../assets/img/bandcamp.png');
