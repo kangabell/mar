@@ -277,15 +277,12 @@ main.home {
 	img {
 		margin: 2rem auto 0;
 		width: 180px;
+		@media only screen and (min-width: 600px) {
+			margin-bottom: 2rem;
+			width: auto;
+		}
 	}
-}
-
-@media only screen and (min-width: 600px) {
-	main.home img {
-		margin-bottom: 2rem;
-		width: auto;
-	}
-}
+} // main.home
 
 /*** MUSIC PAGE ***/
 
@@ -322,11 +319,7 @@ section.album {
 		height: 100%;
 		width: 100%;
 	}
-
-}
-
-@media only screen and (min-width: 700px) {
-	section.album {
+	@media only screen and (min-width: 700px) {
 		display: flex;
 		img {
 			display: block;
@@ -338,13 +331,13 @@ section.album {
 			flex: 2 0 0;
 		}
 	}
-}
-
-@media only screen and (min-width: 1000px) {
-	section.album img {
-		flex: 1 0 0;
+	@media only screen and (min-width: 1000px) {
+		img {
+			flex: 1 0 0;
+		}
 	}
-}
+} // section.album
+
 
 /*** MERCH PAGE ***/
 
@@ -354,6 +347,7 @@ section.merch {
 
 .product {
 	border: none;
+	display: block;
 	margin-bottom: 2rem;
 	@extend %clearfix;
 	.img {
@@ -403,17 +397,7 @@ section.merch {
 			border-color: $red;
 		}
 	}
-}
-
-.more {
-	margin: 2rem 0;
-	text-align: center;
-	width: 100%;
-}
-
-
-@media only screen and (min-width: 600px) {
-	section.merch .product {
+	@media only screen and (min-width: 600px) {
 		float: left;
 		padding: 1rem;
 		width: 50%;
@@ -438,20 +422,21 @@ section.merch {
 			}
 		}
 	}
-	.more {
-		margin-top: 2rem;
-	}
-}
-
-@media only screen and (min-width: 1000px) {
-	section.merch .product {
+	@media only screen and (min-width: 1000px) {
 		padding: 1rem 0;
 		.img, .text {
 			float: left;
 			width: 50%;
 		}
 	}
+} // .product
+
+.more {
+	margin: 2rem 0;
+	text-align: center;
+	width: 100%;
 }
+
 
 /*** INFO PAGE ***/
 

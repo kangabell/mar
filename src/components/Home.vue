@@ -8,7 +8,7 @@
 
 		<blockquote v-bind:cite="quote.url">
 			<p>"{{ quote.content }}"</p>
-			<cite>- {{ quote.author }}, <a v-bind:href="quote.url">Noisey</a></cite>
+			<cite>- {{ quote.author }}, <a v-bind:href="quote.url">{{ quote.source }}</a></cite>
 		</blockquote>
 
 	</main>
