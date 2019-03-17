@@ -291,7 +291,7 @@ $spinSize: 40px;
 .loading {
 	animation: spin 1s infinite linear;
     left: calc(50% - #{$spinSize/2});
-    top: calc(50% - #{$spinSize/2};
+    top: calc(50% - #{$spinSize/2});
 	border-radius: 100%;
 	border: $spinSize/10 solid rgba($gray, 0.2);
 	border-top-color: $gray;
