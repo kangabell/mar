@@ -3,10 +3,9 @@
 
 $white: #fafbf7;
 $dark: #424c49;
-$blue: #6e9eb1;
 $black: #635C5C;
 $gray: lighten($black, 10);
-$red: #994142;
+$red: #a04c36;
 $tan: #D8C0A4;
 
 $border-width: 0.125rem;
@@ -233,6 +232,16 @@ small, p.small, figcaption {
 
 blockquote {
 	margin: 2rem 0;
+}
+
+::selection {
+  background: lighten($tan, 10);
+  color: darken($black, 10);
+}
+
+::-moz-selection {
+  background: lighten($tan, 10);
+  color: darken($black, 10);
 }
 
 section.shows .location, section.shows .note {
