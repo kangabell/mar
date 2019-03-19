@@ -231,7 +231,10 @@ small, p.small, figcaption {
 }
 
 blockquote {
-	margin: 2rem 0;
+	margin: 1rem 0;
+	@media only screen and (min-width: 600px) {
+		margin: 2rem 0;
+	}
 }
 
 ::selection {
@@ -276,10 +279,12 @@ main.home {
 	}
 	img {
 		margin: 2rem auto 0;
-		width: 180px;
+		width: 200px;
 		@media only screen and (min-width: 600px) {
-			margin-bottom: 2rem;
-			width: auto;
+			width: 300px;
+		}
+		@media only screen and (min-width: 1200px) {
+			margin-left: -2rem;
 		}
 	}
 } // main.home
