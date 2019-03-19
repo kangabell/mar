@@ -6,14 +6,17 @@
 		<section class="contact" itemscope itemtype="http://schema.org/MusicGroup">
 
 			<h2>Contact</h2>
-			<p itemprop="email">{{ info.email }}</p>
-			<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-				<span class="address" itemprop="streetAddress">{{ info.address }}</span><br/>
-				<span class="city" itemprop="addressLocality">{{ info.city }}</span>
-				<span class="state" itemprop="addressRegion">{{ info.state }}</span>
-				<span class="zip" itemprop="postalCode">{{ info.zip }}</span>
-			</p>
-			<p><a class="bandcamp img" v-bind:href="info.bandcampURL"><span class="icon"></span> <span class="text">bandcamp</span></a></p>
+			<div class="loading" v-if="!info.address"></div>
+			<div v-else>
+				<p itemprop="email">{{ info.email }}</p>
+				<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+					<span class="address" itemprop="streetAddress">{{ info.address }}</span><br/>
+					<span class="city" itemprop="addressLocality">{{ info.city }}</span>
+					<span class="state" itemprop="addressRegion">{{ info.state }}</span>
+					<span class="zip" itemprop="postalCode">{{ info.zip }}</span>
+				</p>
+				<p><a class="bandcamp img" v-bind:href="info.bandcampURL"><span class="icon"></span> <span class="text">bandcamp</span></a></p>
+			</div>
 			<p class="small">this site is <a href="https://github.com/kangabell/mar">open source</a>.</p>
 
 		</section>

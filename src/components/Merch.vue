@@ -5,7 +5,9 @@
 
 		<section class="merch">
 
-			<a v-for="product in products" class="product" v-bind:class="{ featured: product.featured }" v-bind:href="buildURL(product)">
+			<div class="loading" v-if="!products.length"></div>
+
+			<a v-else v-for="product in products" class="product" v-bind:class="{ featured: product.featured }" v-bind:href="buildURL(product)">
 
 				<div class="img">
 					<img v-bind:src="product.img" v-bind:alt="product.title" />
