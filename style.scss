@@ -35,6 +35,26 @@ $border-width: 0.125rem;
   opacity: 0
 }
 
+
+/* Loading indicator */
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+$spinSize: 40px;
+
+.loading {
+	animation: spin 1s infinite linear;
+	border-radius: 100%;
+	border: $spinSize/10 solid rgba($gray, 0.2);
+	border-top-color: $gray;
+	height: $spinSize;
+	margin-left: 1rem;
+	width: $spinSize;
+	z-index: -1;
+}
+
 /*** LAYOUT ***/
 
 body {
@@ -247,10 +267,6 @@ blockquote {
   color: darken($black, 10);
 }
 
-section.shows .location, section.shows .note {
-	display: block;
-}
-
 iframe {
 	margin-left: auto;
 	margin-right: auto;
@@ -279,6 +295,11 @@ main.home {
 		min-height: 10rem;
 		position: relative;
 	}
+	.loading {
+	    position: absolute;
+	    top: calc(50% - #{$spinSize/2});
+	    left: calc(50% - #{$spinSize/2});
+	}
 	img {
 		margin: 2rem auto 0;
 		width: 200px;
@@ -291,26 +312,17 @@ main.home {
 	}
 } // main.home
 
+/*** SHOWS PAGE ***/
+
+section.shows {
+	.location, .note {
+		display: block;
+	}
+}
+
+// section.shows 
+
 /*** MUSIC PAGE ***/
-
-@keyframes spin { 
-  100% { transform: rotate(360deg); } 
-}
-
-$spinSize: 40px;
-
-.loading {
-	animation: spin 1s infinite linear;
-    left: calc(50% - #{$spinSize/2});
-    top: calc(50% - #{$spinSize/2});
-	border-radius: 100%;
-	border: $spinSize/10 solid rgba($gray, 0.2);
-	border-top-color: $gray;
-    position: absolute;
-    height: $spinSize;
-	width: $spinSize;
-	z-index: -1;
-}
 
 section.album {
 	text-align: center;
@@ -325,6 +337,11 @@ section.album {
 		border: none;
 		height: 100%;
 		width: 100%;
+	}
+	.loading {
+	    position: absolute;
+	    top: calc(50% - #{$spinSize/2});
+	    left: calc(50% - #{$spinSize/2});
 	}
 	@media only screen and (min-width: 700px) {
 		display: flex;
@@ -448,6 +465,7 @@ section.merch {
 /*** INFO PAGE ***/
 
 section.contact a.bandcamp {
+	border: none;
 	.text {
 		border-bottom: $border-width solid $tan;
 	}
