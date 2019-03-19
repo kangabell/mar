@@ -9,7 +9,7 @@
 
 			<div class="tracklist">
 				<div class="loading" v-show="!iframe.loaded"></div>
-				<iframe v-bind:src=" 'https://bandcamp.com/EmbeddedPlayer/album=' + album.id + '/size=large/bgcol=edeae6/linkcol=76939e/tracklist=true/artwork=none/transparent=true' " @load="load" seamless><a v-bind:href="album.url">{{ album.title }}</a></iframe>
+				<iframe v-bind:src=" 'https://bandcamp.com/EmbeddedPlayer/album=' + album.id + '/size=large/bgcol=edeae6/linkcol=994142/tracklist=true/artwork=none/transparent=true' " @load="load" seamless><a v-bind:href="album.url">{{ album.title }}</a></iframe>
 			</div>
 
 		</section>

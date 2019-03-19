@@ -5,16 +5,18 @@
 
 		<section class="merch">
 
-			<div v-for="product in products" class="product" v-bind:class="{ featured: product.featured }">
+			<a v-for="product in products" class="product" v-bind:class="{ featured: product.featured }" v-bind:href="buildURL(product)">
 
-				<a v-bind:href="buildURL(product)" class="img"><img v-bind:src="product.img" v-bind:alt="product.title" /></a>
+				<div class="img">
+					<img v-bind:src="product.img" v-bind:alt="product.title" />
+				</div>
 				<div class="text">
-					<p class="title">{{ product.title }}</p>
+					<h2 class="title">{{ product.title }}</h2>
 					<p class="description" v-if="product.description">{{ product.description }}</p>
-					<p class="price"><a v-bind:href="buildURL(product)">&#36;{{ product.price }}</a></p>
+					<p class="price">&#36;{{ product.price }}</p>
 				</div>
 					
-			</div>
+			</a>
 
 		</section>
 
