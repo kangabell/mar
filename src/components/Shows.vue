@@ -6,6 +6,7 @@
 		<section class="shows">
 			<h2>Upcoming Shows</h2>
 			<ul>
+				<div class="loading" v-if="!shows.length"></div>
 				<li v-for="show in chronShows" v-if="show.archive === false">
 					<strong>
 						<span v-if="show.dateEnd">
@@ -28,6 +29,7 @@
 
 			<h2>Past Shows</h2>
 
+			<div class="loading" v-if="!shows.length"></div>
 			<p v-for="show in reverseChronShows" v-if="show.archive !== false">
 				<strong>{{ show.date | formatDate }}</strong> &#151; 
 				<span v-if="show.note">{{ show.note }}</span>
