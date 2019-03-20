@@ -9,6 +9,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "dotenv": "^7.0.0",
     "firebase": "^5.8.6",
     "moment": "^2.18.1",
     "vue": "^2.3.3",
