@@ -1,14 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
-var dotenv = require('dotenv')
-
-// use dotenv to load either .env (dev mode) or .env.production 
-// (production mode) into process.env and convert all values to strings 
-// such that they can be used in webpack.DefinePlugin properly
-// https://webpack.js.org/plugins/define-plugin/#usage
-dotenv.config({ path: process.env.NODE_ENV === 'production' ? '.env.production' : '.env' })
-env = {}
-Object.entries(process.env).forEach(([key, val]) => env[key] = JSON.stringify(val))
+var Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: './src/main.js',
@@ -61,12 +53,12 @@ module.exports = {
   },
   devtool: '#eval-source-map',
   plugins: [
-    // provide values to application from process.env
-    new webpack.DefinePlugin({
-      'process.env': Object.assign({ 
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-      }, env)
-    }),
+    // provide values to application from process.env, only providing
+    // values referenced in codebase, which is safer than providing all env
+    // values
+    new Dotenv({
+      path: process.env.NODE_ENV === 'production' ? '.env.production' : '.env'
+    })
   ]
 }
 
