@@ -252,6 +252,9 @@ small, p.small, figcaption {
 
 blockquote {
 	margin: 1rem 0;
+	max-width: 38rem;
+	min-height: 10rem;
+	position: relative;
 	@media only screen and (min-width: 600px) {
 		margin: 2rem 0;
 	}
@@ -279,7 +282,7 @@ iframe {
 	h2 {
 		margin-bottom: 1rem;
 	}
-	blockquote {
+	blockquote p {
 		font-size: 1.125rem;
 	}
 	nav a + a {
@@ -290,11 +293,6 @@ iframe {
 /*** HOMEPAGE ***/
 
 main.home {
-	.quote {
-		max-width: 38rem;
-		min-height: 10rem;
-		position: relative;
-	}
 	.loading {
 	    position: absolute;
 	    top: calc(50% - #{$spinSize/2});

@@ -9,7 +9,7 @@
 		<blockquote class="quote" v-bind:cite="quote.url">
 			<div class="loading" v-if="!quote.content"></div>
 			<div v-else>
-				<p>"{{ quote.content }}"</p>
+				<p>{{ quote.content }}</p>
 				<cite>- {{ quote.author }}, <a v-bind:href="quote.url">{{ quote.source }}</a></cite>
 			</div>
 		</blockquote>
