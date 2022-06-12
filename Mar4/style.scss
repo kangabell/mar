@@ -1,0 +1,493 @@
+
+/*** COLORS ***/
+
+$white: #fafbf7;
+$dark: #424c49;
+$black: #635C5C;
+$gray: lighten($black, 10);
+$red: #a04c36;
+$tan: #D8C0A4;
+
+$border-width: 0.125rem;
+
+/*** UTILITIES ***/
+
+%wrap {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 68rem;
+}
+
+%clearfix {
+	&:after {
+		clear: both;
+		content: '';
+		display: table;
+	}
+}
+
+/* Fade-in on load – connected to <transition appear> element */
+
+.v-enter-active, .v-leave-active {
+  transition: opacity .275s
+}
+.v-enter, .v-leave-to {
+  opacity: 0
+}
+
+
+/* Loading indicator */
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+$spinSize: 40px;
+
+.loading {
+	animation: spin 1s infinite linear;
+	border-radius: 100%;
+	border: $spinSize/10 solid rgba($gray, 0.2);
+	border-top-color: $gray;
+	height: $spinSize;
+	margin-left: 1rem;
+	width: $spinSize;
+	z-index: -1;
+}
+
+/*** LAYOUT ***/
+
+body {
+	background-color: $white;
+	margin: 0;
+	overflow-y: scroll; // keep scrollbar in place from page to page
+	position: relative;
+	&:before, &:after { // dark bars
+		background: $red;
+		content: '';
+		height: 0.75rem;
+		position: fixed;
+		width: 100%;
+		left: 0;
+		z-index: 1;
+	}
+	&:before {
+		top: 0;
+	}
+	&:after {
+		bottom: 0;
+	}
+}
+* {
+	box-sizing: border-box;
+}
+
+header {
+	margin-bottom: 3rem;
+	padding: 0.75rem 0;
+	position: fixed;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+	nav {
+		background-color: $white;
+		height: 4rem;
+		padding: 0.75rem 0;
+		text-align: center;
+		@extend %wrap;
+		@extend %clearfix;
+	}
+}
+
+main {
+	padding: 8rem 1rem 3rem;
+	@extend %wrap;
+}
+section {
+	margin-bottom: 3rem;
+}
+ul{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+section.announcement .wrapper + .wrapper {
+	margin-top: 2rem;
+}
+
+@media only screen and (min-width: 600px) {
+	main {
+		min-height: 36rem;
+		padding-top: 10rem;
+	}
+	section {
+		margin-bottom: 5rem;
+	}
+	header nav {
+		height: 6rem;
+		padding: 0.75rem 1rem;
+		text-align: right;
+	}
+
+}
+
+@media only screen and (min-width: 1000px) {
+	header nav {
+		height: 8rem;
+	}
+}
+
+
+/*** TYPOGRAPHY ***/
+
+@font-face {
+  font-family: 'CG Omega';
+  src: url('/assets/fonts/cg-omega.woff2') format('woff2'),
+       url('/assets/fonts/cg-omega.woff') format('woff'),
+       url('/assets/fonts/cg-omega.ttf') format('truetype');
+}
+
+body {
+	color: $black;
+	font-family: Optima, 'CG Omega', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 14px;
+	letter-spacing: 0.025em;
+	line-height: 1.75em;
+}
+
+h1, h2, h3, h4 {
+	font-weight: normal;
+	letter-spacing: 0.05em;
+	margin-top: 0;
+	text-transform: uppercase;
+}
+
+h2 {
+	margin-bottom: 1rem;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+p + h3 {
+	margin-top: 2rem;
+}
+
+a {
+	color: $dark;
+	text-decoration: none;
+	transition: all 0.125s ease;
+}
+.button {
+	border: $border-width solid ($tan);
+	display: inline-block;
+	margin-top: 1rem;
+	padding: 0.5em 1.5em;
+	text-transform: uppercase;
+	&:hover,
+	&:focus {
+		border-color: $black;
+		cursor: pointer;
+	}
+}
+
+nav a {
+	border-bottom: $border-width solid transparent;
+	padding-bottom: 0.75rem;
+	text-transform: uppercase;
+	+ a {
+		margin-left: 0.75rem;
+	}
+	&:hover,
+	&:focus {
+		border-color: $dark;
+	}
+}
+a.router-link-active {
+	border-color: $dark;
+	cursor: default;
+}
+main a {
+	border-bottom: $border-width solid $tan;
+	&:hover,
+	&:focus {
+		border-color: $dark;
+	}
+}
+
+ul {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+li + li {
+	margin-top: 1rem;
+}
+
+.bulleted li {
+	&:before {
+		content: '-';
+		padding-right: 0.5rem;
+	}
+	li:before {
+		content: '\2022';
+	}
+}
+
+h1 {
+	margin: 0;
+	a {
+		border-bottom: 0;
+	}
+}
+
+strong {
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+small, p.small, figcaption {
+	font-size: 0.75em;
+}
+
+blockquote {
+	margin: 1rem 0;
+	max-width: 38rem;
+	min-height: 10rem;
+	position: relative;
+	@media only screen and (min-width: 600px) {
+		margin: 2rem 0;
+	}
+}
+
+::selection {
+  background: lighten($tan, 10);
+  color: darken($black, 10);
+}
+
+::-moz-selection {
+  background: lighten($tan, 10);
+  color: darken($black, 10);
+}
+
+iframe {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media only screen and (min-width: 600px) {
+	body {
+		font-size: 16px;
+	}
+	h2 {
+		margin-bottom: 1rem;
+	}
+	blockquote p {
+		font-size: 1.125rem;
+	}
+	nav a + a {
+		margin-left: 1rem;
+	}
+}
+
+/*** HOMEPAGE ***/
+
+main.home {
+	.loading {
+	    position: absolute;
+	    top: calc(50% - #{$spinSize/2});
+	    left: calc(50% - #{$spinSize/2});
+	}
+	img {
+		margin: 2rem auto 0;
+		width: 200px;
+		@media only screen and (min-width: 600px) {
+			width: 300px;
+		}
+		@media only screen and (min-width: 1200px) {
+			margin-left: -2rem;
+		}
+	}
+} // main.home
+
+/*** SHOWS PAGE ***/
+
+section.shows {
+	.location, .note {
+		display: block;
+	}
+}
+
+// section.shows 
+
+/*** MUSIC PAGE ***/
+
+section.album {
+	text-align: center;
+	img {
+		display: none;
+	}
+	.tracklist {
+		height: 368px;
+		position: relative;
+	}
+	iframe {
+		border: none;
+		height: 100%;
+		width: 100%;
+	}
+	.loading {
+	    position: absolute;
+	    top: calc(50% - #{$spinSize/2});
+	    left: calc(50% - #{$spinSize/2});
+	}
+	@media only screen and (min-width: 700px) {
+		display: flex;
+		img {
+			display: block;
+			flex: 2 0 0;
+			height: 368px;
+			width: 368px;
+		}
+		.tracklist {
+			flex: 2 0 0;
+		}
+	}
+	@media only screen and (min-width: 1000px) {
+		img {
+			flex: 1 0 0;
+		}
+	}
+} // section.album
+
+
+/*** MERCH PAGE ***/
+
+section.merch {
+	@extend %clearfix;
+	.loading {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.product {
+	border: none;
+	display: block;
+	margin-bottom: 2rem;
+	@extend %clearfix;
+	.img {
+		position: relative;
+		img {
+			display: block;
+			width: 100%;
+		}
+		&:after { // inset border
+			border: ($border-width * 2) solid transparent;
+			content: '';
+			display: block;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			transition: all 0.125s ease;;
+		}
+	}
+	p {
+		margin: 0;
+	}
+	.title {
+		font-size: 1.25rem;
+		letter-spacing: 0.05em;
+		line-height: 1;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+	}
+	.description {
+		display: none;
+	}
+	.text {
+		padding: 1rem;
+		transition: all 0.125s ease;;
+	}
+	&.featured .title {
+		font-size: 2.25rem;
+	}
+	&:hover,
+	&:focus {
+		.text {
+			color: $red;
+		}
+		.img:after {
+			border-color: $red;
+		}
+	}
+	@media only screen and (min-width: 600px) {
+		float: left;
+		padding: 1rem;
+		width: 50%;
+		.title {
+			font-size: 1.5rem;
+		}
+		.description {
+			display: block;
+			margin-bottom: 1rem;
+		}
+		&.featured {
+			width: 100%;
+			.img, .text {
+				float: left;
+				width: 50%;
+			}
+			.text {
+				padding: 2rem;
+			}
+			.title {
+				font-size: 3rem;
+			}
+		}
+	}
+	@media only screen and (min-width: 1000px) {
+		padding: 1rem 0;
+		.img, .text {
+			float: left;
+			width: 50%;
+		}
+	}
+} // .product
+
+.more {
+	margin: 2rem 0;
+	text-align: center;
+	width: 100%;
+}
+
+
+/*** INFO PAGE ***/
+
+section.contact a.bandcamp {
+	border: none;
+	.text {
+		border-bottom: $border-width solid $tan;
+	}
+	.icon:before {
+		background-image: url('../assets/img/bandcamp.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		content: '';
+		display: inline-block;
+		height: 1.5em;
+		opacity: 0.8;
+		width: 1.5em;
+		vertical-align: middle;
+	}
+	&:hover .icon:before,
+	&:focus .icon:before {
+		opacity: 1;
+	}
+	&:hover .text,
+	&:focus .text {
+		border-color: $dark;
+	}
+}
