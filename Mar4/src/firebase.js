@@ -1,4 +1,4 @@
-import Firebase from 'firebase'
+import Firebase from '@firebase/app'
 
 const firebaseApp = Firebase.initializeApp({
 	apiKey: process.env.API_KEY,
