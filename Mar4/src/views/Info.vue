@@ -5,22 +5,19 @@
 
 		<section class="contact" itemscope itemtype="http://schema.org/MusicGroup">
 
-			<div class="loading" v-if="!info.address"></div>
-			<div v-else>
+			<div>
 				<h2>About</h2>
-				<div v-for="paragraph in paragraphs">
-					<p v-html="paragraph.text"></p>
+				<div>
+					<p>Mar is <a href="http://plastic-idolatry.com/erik/" target="_blank">Eiríkr Åsheim</a> &amp; <a href="http://art.kangabell.com/" target="_blank">Kay Belardinelli</a>. 2019 performances also included Gabe Lozada.</p>
 				</div>
-				<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<span class="address" itemprop="streetAddress">{{ info.address }}</span>
-					<span class="city" itemprop="addressLocality">{{ info.city }}</span>
-					<span class="state" itemprop="addressRegion">{{ info.state }}</span>
-					<span class="zip" itemprop="postalCode">{{ info.zip }}</span>
-				</p>
-				<p itemprop="email">{{ info.email }}</p>
-				<p><a class="bandcamp img" v-bind:href="info.bandcampURL"><span class="icon"></span> <span class="text">bandcamp</span></a></p>
+				<div>
+					<blockquote><p>“Mar’s echoing doom/sludge is a testament to pain and how music can help you work through tragic events and seek the light on the other side. For this duo [...] the pain that is spoken of is felt keenly through dragged out notes, a voice that is ravaged with experience and an overdriven sound that oppresses from the outset.”</p> <cite>– <a href="https://bleakmetal.com/2019/01/27/the-round-up-tapes-volume-xvi/amp/" target="blank">Bleak Metal</a></cite></blockquote>
+				</div>
+				<p itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress" class="address">P.O. Box 23285,</span> <span itemprop="addressLocality" class="city">Providence</span> <span itemprop="addressRegion" class="state">RI</span> <span itemprop="postalCode" class="zip">02903</span></p>
+				<p itemprop="email">info@marpvd.com</p>
+				<p><a href="https://m-a-r.bandcamp.com" class="bandcamp img"><span class="icon"></span> <span class="text">bandcamp</span></a></p>
+				<p class="small">this site is <a href="https://github.com/kangabell/mar">open source</a>.</p>
 			</div>
-			<p class="small">this site is <a href="https://github.com/kangabell/mar">open source</a>.</p>
 
 		</section>
 
@@ -28,39 +25,3 @@
 
 </transition>
 </template>
-
-<script>
-
-	import {db} from '../firebase';
-
-	export default {
-		data() {
-			return {
-				paragraphs: {},
-				articles: {},
-				members: {},
-				vendors: {},
-				info: {}
-			}
-		},
-		firebase: {
-			paragraphs: {
-				source: db.ref('paragraphs'),
-			},
-			articles: {
-				source: db.ref('articles'),
-			},
-			members: {
-				source: db.ref('members'),
-			},
-			vendors: {
-				source: db.ref('vendors'),
-			},
-			info: {
-				source: db.ref('info'),
-				asObject: true
-			}
-		}
-	}
-
-</script>
