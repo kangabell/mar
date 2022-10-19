@@ -4,183 +4,610 @@
 	<main>
 
 		<section class="shows">
-
-			<div>
-				<h2>Upcoming Shows</h2>
-
-				<ul>
-					<li>
-						<strong>May 19 2022</strong> 
-						<span class="note">* Kay's solo project *</span> 
-						<span class="location">Wild Tongues (virtual show)</span> 
-						<span class="band"><a href="https://mariassunta.net">Mariassunta</a>, </span>
-						<span class="band">Desiree Bumanglag, </span>
-						<span class="band">Lou Tandon, </span>
-						<span class="band">Maddie Yazel</span>
+			<h2>Upcoming Shows</h2>
+			<ul>
+				<div class="loading" v-if="!shows.length"></div>
+				<template v-for="show in chronShows">
+					<li v-if="show.archive === false">
+						<strong>
+							<span v-if="show.dateEnd">
+								{{ show.date }} &#45; {{ show.dateEnd }}
+							</span>
+							<span v-else>
+								{{ show.date }}
+							</span>
+						</strong>
+						<span v-if="show.note" class="note">{{ show.note }}</span>
+						<span class="location">{{ show.location }}</span>
+						<span v-if="show.bands" v-for="(band, index) in show.bands" class="band">
+							<a v-if="band.url" v-bind:href="band.url">{{ band.name }}</a><span v-else>{{ band.name }}</span><span v-if="index+1 < show.bands.length">, </span>
+						</span>
 					</li>
-				</ul>
-			</div>
-
+				</template>
+			</ul>
 		</section>
 
 		<section>
 
 			<h2>Past Shows</h2>
 
-			<p>
-				<strong>September 10 2019</strong> &#8212
-				<span><span>Crafter<span>, </span></span><span>Peace Test<span>, </span></span><span>Rage//Quit<!----></span></span>
-				@ AS220, Providence RI
-			</p>
-			<p>
-				<strong>July 4 2019</strong> &#8212
-				<span>* Fuck the Fourth Fest *</span>
-				@ Al Dios, Providence RI
-			</p>
-			<p>
-				<strong>April 18 2019</strong> &#8212
-				<span><span>Towanda<span>, </span></span><span>Space Camp<span>, </span></span><span>Wolf's Milk<!----></span></span>
-				@ Machines with Magnets, Pawtucket RI
-			</p>
-			<p>
-				<strong>October 16 2018</strong> &#8212
-				<span><span>Soul Glo<span>, </span></span><span>Listless<span>, </span></span><span>Hairspray Queen<!----></span></span>
-				@ Dusk, Providence RI
-			</p>
-			<p>
-				<strong>September 21 2018</strong> &#8212
-				<span>* Sheer Queer Fest *</span>
-				@ Hardcore Stadium, Cambridge MA
-			</p>
-			<p>
-				<strong>July 31 2018</strong> &#8212
-				<span><span>Lilac<!----></span></span>
-				@ Machines with Magnets, Providence RI
-			</p>
-			<p>
-				<strong>June 28 2018</strong> &#8212
-				<span><span>Changeling<span>, </span></span><span>Obaku<span>, </span></span><span>Empty Field<!----></span></span>
-				@ Machines with Magnets, Providence RI
-			</p>
-			<p>
-				<strong>November 24 2017</strong> &#8212
-				<span><span>Blood Club<span>, </span></span><span>Wimp<span>, </span></span><span>Ice Cream Cake<span>, </span></span><span>Chained to the Bottom of the Ocean<!----></span></span>
-				@ Democracy Center, Cambridge MA
-			</p>
-			<p>
-				<strong>November 11 2017</strong> &#8212
-				<span>Hassle Fest 9</span>
-				@ ONCE, Somerville MA
-			</p>
-			<p>
-				<strong>November 3 2017</strong> &#8212
-				<span><span>Chained to the Bottom of the Ocean<span>, </span></span><span>Oroboro<span>, </span></span><span>Space Camp<!----></span></span>
-				@ Unitarian Universalist Church, Amherst MA
-			</p>
-			<p>
-				<strong>November 2 2017</strong> &#8212
-				<span><span>Sunrot<span>, </span></span><span>Dead Empires<span>, </span></span><span>Smock<!----></span></span>
-				@ Meatlocker, Montclair NJ
-			</p>
-			<p>
-				<strong>November 1 2017</strong> &#8212
-				<span><span>Shit City<span>, </span></span><span>Night Raids<!----></span></span>
-				@ Cousin Danny's, Philadelphia, PA
-			</p>
-			<p>
-				<strong>October 29 2017</strong> &#8212
-				<span><span>Endon<span>, </span></span><span>Tovarish<span>, </span></span><span>Baylies Band<!----></span></span>
-				@ Alchemy, Providence RI
-			</p>
-			<p>
-				<strong>October 2 2017</strong> &#8212
-				<span><span>Spitehouse<span>, </span></span><span>Worst Days<!----></span></span>
-				@ Aurora, Providence RI
-			</p>
-			<p>
-				<strong>August 4 2017</strong> &#8212
-				<span><span>Sunrot<span>, </span></span><span>Godroot<!----></span></span>
-				@ Funky Jungle, Providence RI
-			</p>
-			<p>
-				<strong>July 19 2017</strong> &#8212
-				<span><span>Xylitol<span>, </span></span><span>Dauðyflin<span>, </span></span><span>Patsy<span>, </span></span><span>Sap<!----></span></span>
-				@ Psychic Readings, Providence RI
-			</p>
-			<p>
-				<strong>July 1 2017</strong> &#8212
-				<span><span>Thou<span>, </span></span><span>Cloudrat<span>, </span></span><span>Moloch<!----></span></span>
-				@ Aurora (Providence RI)
-			</p>
-			<p>
-				<strong>July 1 2017</strong> &#8212
-				<span><span>Think Tank<span>, </span></span><span>Perennial<span>, </span></span><span>Milky Wimpshake<span>, </span></span><span>Electric Mail Myself To Thoreau<!----></span></span>
-				@ Gold Spring Hollow (Belchertown MA)
-			</p>
-			<p>
-				<strong>June 30 2017</strong> &#8212
-				<span><span>Think Tank<span>, </span></span><span>Donor<span>, </span></span><span>Blind Raftery<!----></span></span>
-				@ Overlook Hotel (Philadelphia PA)
-			</p>
-			<p>
-				<strong>June 29 2017</strong> &#8212
-				<span><span>Think Tank<span>, </span></span><span>Big Bliss<span>, </span></span><span>Dog Shepherd<!----></span></span>
-				@ Trans-Pecos (Queens NY)
-			</p>
-			<p>
-				<strong>June 28 2017</strong> &#8212
-				<span><span>Think Tank<span>, </span></span><span>Opening Bell<span>, </span></span><span>Exposed as Rot<!----></span></span>
-				@ Osborn House (New Haven CT)
-			</p>
-			<p>
-				<strong>May 26 2017</strong> &#8212
-				<span><span>visibilities<span>, </span></span><span>Suicide Magnets<span>, </span></span><span>Caroline Park<!----></span></span>
-				@ Psychic Readings (Providence, RI)
-			</p>
-			<p>
-				<strong>March 11 2017</strong> &#8212
-				<span><span>Think Tank<span>, </span></span><span>The Oracle<!----></span></span>
-				@ Machines With Magnets (Pawtucket, RI)
-			</p>
-			<p>
-				<strong>March 5 2017</strong> &#8212
-				<span><span>Davidians<span>, </span></span><span>N.E.G.<span>, </span></span><span>Penetrode<!----></span></span>
-				@ LAVA (Philadelphia, PA)
-			</p>
-			<p>
-				<strong>March 3 2017</strong> &#8212
-				<span><span>Northern Liberties<span>, </span></span><span>Hulk Smash<!----></span></span>
-				@ Sound Hole (Philadelphia, PA)
-			</p>
-			<p>
-				<strong>February 1 2017</strong> &#8212
-				<span><span>Occult Blood<span>, </span></span><span>Flinstones<span>, </span></span><span>Double Dragon<!----></span></span>
-				@ Machines With Magnets (Pawtucket, RI)
-			</p>
-			<p>
-				<strong>October 21 2016</strong> &#8212
-				<span><span>Empty Grows Every Bed<span>, </span></span><span>Mary Burke<!----></span></span>
-				@ Psychic Readings (Providence, RI)
-			</p>
-			<p>
-				<strong>April 16 2016</strong> &#8212
-				<span><span>Mossy Fiber<span>, </span></span><span>Nan Dejour<span>, </span></span><span>Sultanique<!----></span></span>
-				@ 52 Chapped Lips (Providence, RI)
-			</p>
-			<p>
-				<strong>July 12 2015</strong> &#8212
-				<span><span>Rectrix<span>, </span></span><span>PWR RTLZ<!----></span></span>
-				@ Red Room, Providence RI
-			</p>
-			<p>
-				<strong>May 5 2015</strong> &#8212
-				<span><span>Börn<span>, </span></span><span>Vitka<span>, </span></span><span>Pvblic Bath<!----></span></span>
-				@ Red Room, Providence RI
-			</p>
-
+			<div class="loading" v-if="!shows.length"></div>
+			<template v-for="show in reverseChronShows">
+				<p v-if="show.archive !== false">
+					<strong>{{ show.date }}</strong> &#151; 
+					<span v-if="show.note">{{ show.note }}</span>
+					<span v-else>
+						<span v-if="show.bands" v-for="(band, index) in show.bands">{{ band.name }}<span v-if="index+1 < show.bands.length">, </span></span> <!-- comma-separated list of bands -->
+					</span>
+					@ {{ show.location }}
+				</p>
+			</template>
 		</section>
 
 	</main>
 
 </transition>
 </template>
+
+<script>
+
+	import _ from 'lodash'
+	import moment from 'moment'
+	
+	export default {
+		data() {
+			return {
+				announcements: {},
+				shows: [
+					{
+					  archive: false,
+					  bands: [
+					    {
+					      name: "Captured! by Robots",
+					      url: "https://capturedbyrobots.bandcamp.com"
+					    },
+					    {
+					      name: "Math the Band",
+					      url: "https://maththeband.bandcamp.com/"
+					    }
+					  ],
+					  date: "2022/10/08",
+					  location: "Black Box, Providence, RI"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Crafter",
+					      url: "https://crafterhc.bandcamp.com"
+					    },
+					    {
+					      name: "Peace Test",
+					      url: "https://peacetest.bandcamp.com"
+					    },
+					    {
+					      name: "Rage//Quit",
+					      url: "https://ragequithc.bandcamp.com/"
+					    }
+					  ],
+					  date: "2019/09/10",
+					  location: "AS220, Providence RI"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Down with Rent",
+					      url: "https://downwithrent.bandcamp.com/"
+					    },
+					    {
+					      name: "Taciturn",
+					      url: "https://taciturntheband.bandcamp.com/"
+					    },
+					    {
+					      name: "Boiling Point",
+					      url: "https://boilingpointpvd.bandcamp.com/"
+					    },
+					    {
+					      name: "Hairspray Queen",
+					      url: "https://hairsprayqueen.bandcamp.com/"
+					    },
+					    {
+					      name: "+ more"
+					    }
+					  ],
+					  date: "2019/07/04",
+					  location: "Al Dios, Providence RI",
+					  note: "* Fuck the Fourth Fest *"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Towanda",
+					      url: "https://towanda.bandcamp.com/"
+					    },
+					    {
+					      name: "Space Camp",
+					      url: "https://spacecampct.bandcamp.com/"
+					    },
+					    {
+					      name: "Wolf's Milk",
+					      url: "https://wolfsmilk.bandcamp.com/album/wolfs-milk "
+					    }
+					  ],
+					  date: "2019/04/18",
+					  location: "Machines with Magnets, Pawtucket RI"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Sap",
+					      url: "https://sapma.bandcamp.com/releases"
+					    },
+					    {
+					      name: "Primitive Rage",
+					      url: "https://primitiveragehc.bandcamp.com/album/ouroboros-mentality"
+					    },
+					    {
+					      name: "Gudsforladt",
+					      url: "https://gudsforladt.bandcamp.com/"
+					    },
+					    {
+					      name: "Perennial",
+					      url: "https://perennialtheband.bandcamp.com"
+					    },
+					    {
+					      name: "uncertain",
+					      url: "https://uncertain.bandcamp.com/music"
+					    },
+					    {
+					      name: "WIMP",
+					      url: "https://wimpforwimp.bandcamp.com/releases"
+					    },
+					    {
+					      name: "Causa",
+					      url: "https://causapunx.bandcamp.com/"
+					    },
+					    {
+					      name: "+ more",
+					      url: "https://www.indiegogo.com/projects/sheer-queer-fest-2018#/"
+					    }
+					  ],
+					  date: "2018/09/21",
+					  "dateEnd": "2018/09/23",
+					  location: "Hardcore Stadium, Cambridge MA",
+					  note: "* Sheer Queer Fest *"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Lilac",
+					      url: "https://lilacchicago.bandcamp.com"
+					    }
+					  ],
+					  date: "2018/07/31",
+					  location: "Machines with Magnets, Providence RI"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Changeling",
+					      url: "http://changelingmpls.bandcamp.com/"
+					    },
+					    {
+					      name: "Obaku",
+					      url: "http://obaku.bandcamp.com/"
+					    },
+					    {
+					      name: "Empty Field"
+					    }
+					  ],
+					  date: "2018/06/28",
+					  location: "Machines with Magnets, Providence RI"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Pere Ubu",
+					      url: "http://www.ubuprojex.com/"
+					    },
+					    {
+					      name: "SEA",
+					      url: "https://heavysea.bandcamp.com/"
+					    },
+					    {
+					      name: "Escuela",
+					      url: "https://escuelaescuela.bandcamp.com/"
+					    },
+					    {
+					      name: "Rejiem",
+					      url: "https://rejiem.bandcamp.com/album/new-beginnings-ep"
+					    },
+					    {
+					      name: "YAHKÈL",
+					      url: "https://yahkel.bandcamp.com/album/we-will-rise-demo"
+					    },
+					    {
+					      name: "+ many more",
+					      url: "http://bostonhasslefest.com/"
+					    }
+					  ],
+					  date: "2017/11/11",
+					  location: "ONCE, Somerville MA",
+					  note: "Hassle Fest 9"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Think Tank"
+					    },
+					    {
+					      name: "Big Bliss"
+					    },
+					    {
+					      name: "Dog Shepherd"
+					    }
+					  ],
+					  date: "2017/06/29",
+					  location: "Trans-Pecos (Queens NY)"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Xylitol"
+					    },
+					    {
+					      name: "Dauðyflin"
+					    },
+					    {
+					      name: "Patsy"
+					    },
+					    {
+					      name: "Sap"
+					    }
+					  ],
+					  date: "2017/07/19",
+					  location: "Psychic Readings, Providence RI"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Sunrot"
+					    },
+					    {
+					      name: "Godroot"
+					    }
+					  ],
+					  date: "2017/08/04",
+					  location: "Funky Jungle, Providence RI"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Think Tank"
+					    },
+					    {
+					      name: "Perennial"
+					    },
+					    {
+					      name: "Milky Wimpshake"
+					    },
+					    {
+					      name: "Electric Mail Myself To Thoreau"
+					    }
+					  ],
+					  date: "2017/07/01",
+					  location: "Gold Spring Hollow (Belchertown MA)"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Think Tank"
+					    },
+					    {
+					      name: "Donor"
+					    },
+					    {
+					      name: "Blind Raftery"
+					    }
+					  ],
+					  date: "2017/06/30",
+					  location: "Overlook Hotel (Philadelphia PA)"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Think Tank"
+					    },
+					    {
+					      name: "Opening Bell"
+					    },
+					    {
+					      name: "Exposed as Rot"
+					    }
+					  ],
+					  date: "2017/06/28",
+					  location: "Osborn House (New Haven CT)"
+					},
+					{
+					  bands: [
+					    {
+					      name: "visibilities"
+					    },
+					    {
+					      name: "Suicide Magnets"
+					    },
+					    {
+					      name: "Caroline Park"
+					    }
+					  ],
+					  date: "2017/05/26",
+					  location: "Psychic Readings (Providence, RI)"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Thou"
+					    },
+					    {
+					      name: "Cloudrat"
+					    },
+					    {
+					      name: "Moloch"
+					    }
+					  ],
+					  date: "2017/07/01",
+					  location: "Aurora (Providence RI)"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Think Tank"
+					    },
+					    {
+					      name: "The Oracle"
+					    }
+					  ],
+					  date: "2017/03/11",
+					  location: "Machines With Magnets (Pawtucket, RI)"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Davidians"
+					    },
+					    {
+					      name: "N.E.G."
+					    },
+					    {
+					      name: "Penetrode"
+					    }
+					  ],
+					  date: "2017/03/05",
+					  location: "LAVA (Philadelphia, PA)"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Northern Liberties"
+					    },
+					    {
+					      name: "Hulk Smash"
+					    }
+					  ],
+					  date: "2017/03/03",
+					  location: "Sound Hole (Philadelphia, PA)"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Occult Blood"
+					    },
+					    {
+					      name: "Flinstones"
+					    },
+					    {
+					      name: "Double Dragon"
+					    }
+					  ],
+					  date: "2017/02/01",
+					  location: "Machines With Magnets (Pawtucket, RI)"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Empty Grows Every Bed"
+					    },
+					    {
+					      name: "Mary Burke"
+					    }
+					  ],
+					  date: "2016/10/21",
+					  location: "Psychic Readings (Providence, RI)"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Mossy Fiber"
+					    },
+					    {
+					      name: "Nan Dejour"
+					    },
+					    {
+					      name: "Sultanique"
+					    }
+					  ],
+					  date: "2016/04/16",
+					  location: "52 Chapped Lips (Providence, RI)"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Rectrix"
+					    },
+					    {
+					      name: "PWR RTLZ"
+					    }
+					  ],
+					  date: "2015/07/12",
+					  location: "Red Room, Providence RI"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Börn"
+					    },
+					    {
+					      name: "Vitka"
+					    },
+					    {
+					      name: "Pvblic Bath"
+					    }
+					  ],
+					  date: "2015/05/05",
+					  location: "Red Room, Providence RI"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Sunrot",
+					      url: "https://sunrot.bandcamp.com/"
+					    },
+					    {
+					      name: "Dead Empires",
+					      url: "https://deadempires.bandcamp.com/"
+					    },
+					    {
+					      name: "Smock",
+					      url: "https://snifflingindiekids.bandcamp.com/track/chug"
+					    }
+					  ],
+					  date: "2017/11/02",
+					  location: "Meatlocker, Montclair NJ"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Spitehouse",
+					      url: "https://www.youtube.com/watch?v=JNoLsRyRdnI"
+					    },
+					    {
+					      name: "Worst Days",
+					      url: "https://worstdays.bandcamp.com/"
+					    }
+					  ],
+					  date: "2017/10/02",
+					  location: "Aurora, Providence RI"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Shit City",
+					      url: "https://shitcity.bandcamp.com/"
+					    },
+					    {
+					      name: "Night Raids",
+					      url: "https://nightraids.bandcamp.com/"
+					    }
+					  ],
+					  date: "2017/11/01",
+					  location: "Cousin Danny's, Philadelphia, PA"
+					},
+					{
+					  bands: [
+					    {
+					      name: "Endon",
+					      url: "https://endon.bandcamp.com/"
+					    },
+					    {
+					      name: "Tovarish",
+					      url: "https://tovarish.bandcamp.com/"
+					    },
+					    {
+					      name: "Baylies Band",
+					      url: "https://bayliesband.bandcamp.com/"
+					    }
+					  ],
+					  date: "2017/10/29",
+					  location: "Alchemy, Providence RI"
+					},
+					{
+					  archive: true,
+					  bands: [
+					    {
+					      name: "Chained to the Bottom of the Ocean",
+					      url: "http://chainedtothebottomoftheocean.bandcamp.com"
+					    },
+					    {
+					      name: "Oroboro",
+					      url: "https://0robor0.bandcamp.com"
+					    },
+					    {
+					      name: "Space Camp",
+					      url: "https://spacecampct.bandcamp.com/"
+					    }
+					  ],
+					  date: "2017/11/03",
+					  location: "Unitarian Universalist Church, Amherst MA"
+					},
+					{
+					  archive: true,
+					  bands: [
+					    {
+					      name: "Blood Club",
+					      url: "https://lianasfire.bandcamp.com"
+					    },
+					    {
+					      name: "Wimp",
+					      url: "https://www.youtube.com/watch?v=LM9zpc0jIv8"
+					    },
+					    {
+					      name: "Ice Cream Cake"
+					    },
+					    {
+					      name: "Chained to the Bottom of the Ocean",
+					      url: "https://chainedtothebottomoftheocean.bandcamp.com"
+					    }
+					  ],
+					  date: "2017/11/24",
+					  location: "Democracy Center, Cambridge MA"
+					},
+					{
+					  archive: true,
+					  bands: [
+					    {
+					      name: "Soul Glo",
+					      url: "https://soulglophl.bandcamp.com/"
+					    },
+					    {
+					      name: "Listless",
+					      url: "https://www.youtube.com/watch?v=1JVZP9Vjuqs"
+					    },
+					    {
+					      name: "Hairspray Queen",
+					      url: "http://hairsprayqueen.bandcamp.com/"
+					    }
+					  ],
+					  date: "2018/10/16",
+					  location: "Dusk, Providence RI"
+					}
+				]
+			}
+		},
+		computed: {
+		  chronShows: function () {
+		    return _.orderBy(this.shows, 'date')
+		  },
+		  reverseChronShows: function () {
+		    return _.orderBy(this.shows, 'date').reverse();
+		  }
+		},
+		filters: {
+			formatDate: function(value) {
+				if (value) return moment(String(value)).format('MMMM D YYYY')
+			},
+			formatDateShort: function(value) {
+				if (value) return moment(String(value)).format('MMMM D')
+			}
+		}
+	}
+
+</script>
