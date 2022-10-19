@@ -19,7 +19,6 @@
 				<p itemprop="email">{{ info.email }}</p>
 				<p><a class="bandcamp img" v-bind:href="info.bandcampURL"><span class="icon"></span> <span class="text">bandcamp</span></a></p>
 			</div>
-			<p class="small">this site is <a href="https://github.com/kangabell/mar">open source</a>.</p>
 
 		</section>
 
@@ -36,6 +35,9 @@
 				paragraphs: [
 					{
 					  text: "Mar is <a href='http://plastic-idolatry.com/erik/' target='_blank'>Eiríkr Åsheim</a> & <a href='http://art.kangabell.com/' target='_blank'>Kay Belardinelli</a>. They both play all the instruments.<br/>2022 performances also include David Sano on drums. 2019 performances included Gabe Lozada on guitar."
+					},
+					{
+					  text: "<blockquote><p>&#8220;The Providence, Rhode Island duo hurtle themselves into waves of apocalyptic sludge and dire noise with zero regard for their own safety; the riffs come fitfully, lurching and pulling like a rabid dog straining at his leash, as vocalist Kay Belardinelli exorcises her demons in real time, gasping for air and calling down thunder. The lyrics tackle the pain and power of recovery and trauma, imbuing the album's aggrieved, menacing character with a deeply personal bent that only deepens its sense of overwhelming darkness.&#8221;</p> <cite>– Kim Kelly, <a href='https://noisey.vice.com/en_us/article/bjx8wd/the-30-best-overlooked-albums-of-2017-so-far' target='blank'>Noisey</a></cite></blockquote>"
 					},
 					{
 					  text: "<blockquote><p>&#8220;Mar’s echoing doom/sludge is a testament to pain and how music can help you work through tragic events and seek the light on the other side. For this duo [...] the pain that is spoken of is felt keenly through dragged out notes, a voice that is ravaged with experience and an overdriven sound that oppresses from the outset.&#8221;</p> <cite>– <a href='https://bleakmetal.com/2019/01/27/the-round-up-tapes-volume-xvi/amp/' target='blank'>Bleak Metal</a></cite></blockquote>"
