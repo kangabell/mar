@@ -3,10 +3,17 @@
 
 $white: #fafbf7;
 $dark: #424c49;
-$black: #635C5C;
-$gray: lighten($black, 10);
+$black: #131416;
+$gray: #D0CBC6;
 $red: #a04c36;
 $tan: #D8C0A4;
+
+:root {
+	--color__background-body: #{$black};
+	--color__text-main: #{$gray};
+	--color__link: #{$gray};
+	--color__accent: #{$red};
+}
 
 $border-width: 0.125rem;
 
@@ -58,12 +65,12 @@ $spinSize: 40px;
 /*** LAYOUT ***/
 
 body {
-	background-color: $white;
+	background-color: var(--color__background-body);
 	margin: 0;
 	overflow-y: scroll; // keep scrollbar in place from page to page
 	position: relative;
 	&:before, &:after { // dark bars
-		background: $red;
+		background: var(--color__accent);
 		content: '';
 		height: 0.75rem;
 		position: fixed;
@@ -90,7 +97,7 @@ header {
 	width: 100%;
 	z-index: 1;
 	nav {
-		background-color: $white;
+		background-color: var(--color__background-body);
 		height: 4rem;
 		padding: 0.75rem 0;
 		text-align: center;
@@ -148,7 +155,7 @@ section.announcement .wrapper + .wrapper {
 }
 
 body {
-	color: $black;
+	color: var(--color__text-main);
 	font-family: Optima, 'CG Omega', 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 14px;
 	letter-spacing: 0.025em;
@@ -175,7 +182,7 @@ p + h3 {
 }
 
 a {
-	color: $dark;
+	color: var(--color__link);
 	text-decoration: none;
 	transition: all 0.125s ease;
 }
@@ -187,7 +194,7 @@ a {
 	text-transform: uppercase;
 	&:hover,
 	&:focus {
-		border-color: $black;
+		border-color: var(--color__text-main);
 		cursor: pointer;
 	}
 }
@@ -201,18 +208,18 @@ nav a {
 	}
 	&:hover,
 	&:focus {
-		border-color: $dark;
+		border-color: var(--color__accent);
 	}
 }
 a.router-link-active {
-	border-color: $dark;
+	border-color: var(--color__accent);
 	cursor: default;
 }
 main a {
-	border-bottom: $border-width solid $tan;
+	border-bottom: $border-width solid $dark;
 	&:hover,
 	&:focus {
-		border-color: $dark;
+		border-color: var(--color__accent);
 	}
 }
 
@@ -261,13 +268,11 @@ blockquote {
 }
 
 ::selection {
-  background: lighten($tan, 10);
-  color: darken($black, 10);
+  background: $dark;
 }
 
 ::-moz-selection {
-  background: lighten($tan, 10);
-  color: darken($black, 10);
+  background: $dark;
 }
 
 iframe {
