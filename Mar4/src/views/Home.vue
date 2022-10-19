@@ -1,10 +1,9 @@
 <template>
 <transition appear>
-	
 
 	<main class="home">
 
-		<img class="logo" src="assets/img/logo.png" alt="Mar" />
+		<img class="logo" src="@/assets/img/logo.png" alt="Mar" />
 
 		<section class="announcement">
 			<p class="emphasis">

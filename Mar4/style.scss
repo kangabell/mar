@@ -149,9 +149,9 @@ section.announcement .wrapper + .wrapper {
 
 @font-face {
   font-family: 'CG Omega';
-  src: url('/assets/fonts/cg-omega.woff2') format('woff2'),
-       url('/assets/fonts/cg-omega.woff') format('woff'),
-       url('/assets/fonts/cg-omega.ttf') format('truetype');
+  src: url('src/assets/fonts/cg-omega.woff2') format('woff2'),
+       url('src/assets/fonts/cg-omega.woff') format('woff'),
+       url('src/assets/fonts/cg-omega.ttf') format('truetype');
 }
 
 body {
@@ -488,7 +488,7 @@ section.contact a.bandcamp {
 		border-bottom: $border-width solid $tan;
 	}
 	.icon:before {
-		background-image: url('../assets/img/bandcamp.png');
+		background-image: url('src/assets/img/bandcamp.png');
 		background-size: contain;
 		background-repeat: no-repeat;
 		content: '';
