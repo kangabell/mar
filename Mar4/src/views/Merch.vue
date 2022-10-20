@@ -7,7 +7,7 @@
 
 			<div class="loading" v-if="!products.length"></div>
 
-			<a v-else v-for="product in products" class="product" v-bind:class="{ featured: product.featured }" v-bind:href="buildURL(product)">
+			<a v-else v-for="product in products" class="product" v-bind:class="{ featured: product.featured }" v-bind:href="buildURL(product)" target="_blank">
 
 				<div class="img">
 					<img v-bind:src="product.img" v-bind:alt="product.title" />
@@ -23,7 +23,7 @@
 		</section>
 
 		<div class="more">
-			<a class="button" v-bind:href="info.bandcampURL + '/merch'">More Merch</a>
+			<a class="button" v-bind:href="info.bandcampURL + '/merch'" target="_blank">More Merch</a>
 		</div>
 
 	</main>
@@ -95,7 +95,9 @@
 					  type: "merch"
 					}
 				],
-				info: {}
+				info: {
+					bandcampURL: "https://m-a-r.bandcamp.com",
+				}
 			}
 		},
 		methods: {
