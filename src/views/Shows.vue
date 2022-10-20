@@ -11,10 +11,10 @@
 					<li v-if="show.archive === false">
 						<strong>
 							<span v-if="show.dateEnd">
-								{{ show.date }} &#45; {{ show.dateEnd }}
+								{{ formatDate(show.dateShort) }} &#45; {{ formatDate(show.dateEnd) }}
 							</span>
 							<span v-else>
-								{{ show.date }}
+								{{ formatDate(show.date) }}
 							</span>
 						</strong>
 						<span v-if="show.note" class="note">{{ show.note }}</span>
@@ -34,7 +34,7 @@
 			<div class="loading" v-if="!shows.length"></div>
 			<template v-for="show in reverseChronShows">
 				<p v-if="show.archive !== false">
-					<strong>{{ show.date }}</strong> &#151; 
+					<strong>{{ formatDate(show.date) }}</strong> &#151;
 					<span v-if="show.note">{{ show.note }}</span>
 					<span v-else>
 						<span v-if="show.bands" v-for="(band, index) in show.bands">{{ band.name }}<span v-if="index+1 < show.bands.length">, </span></span> <!-- comma-separated list of bands -->
@@ -600,14 +600,14 @@
 		    return _.orderBy(this.shows, 'date').reverse();
 		  }
 		},
-		filters: {
-			formatDate: function(value) {
-				if (value) return moment(String(value)).format('MMMM D YYYY')
+		methods: {
+			formatDate(value) {
+				return moment(String(value)).format('MMMM D YYYY')
 			},
-			formatDateShort: function(value) {
-				if (value) return moment(String(value)).format('MMMM D')
+			formatDateShort(value) {
+				return moment(String(value)).format('MMMM D')
 			}
-		}
+		},
 	}
 
 </script>
