@@ -1,17 +1,35 @@
-# MAR
+# Mar4
 
-> website for the band mar. built with vuejs. by kay belardinelli.
+This template should help get you started developing with Vue 3 in Vite.
 
+## Recommended IDE Setup
 
-## Build Setup
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-``` bash
-# install dependencies
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
 npm install
+```
 
-# serve with hot reload at localhost:8080
+### Compile and Hot-Reload for Development
+
+```sh
 npm run dev
+```
 
-# build for production with minification
+### Preview site locally before deploy
+
+```sh
+npm run preview
+```
+
+### Compile and Minify for Production
+
+```sh
 npm run build
 ```

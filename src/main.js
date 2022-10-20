@@ -1,26 +1,9 @@
-import './firebase';
-
-import Vue from 'vue'
-import VueFire from 'vuefire'
+import { createApp } from 'vue'
 import App from './App.vue'
-import VueRouter from 'vue-router'
-import Routes from './routes'
+import router from './router'
 
-Vue.use(VueFire)
-Vue.use(VueRouter);
+const app = createApp(App)
 
-const router = new VueRouter({
-	routes: Routes,
-	mode: 'history',
-	scrollBehavior (to, from, savedPosition) {
-		return { x: 0, y: 0 }
-	}
-});
+app.use(router)
 
-export const bus = new Vue();
-
-new Vue({
-  el: '#app',
-  render: h => h(App),
-  router: router
-})
+app.mount('#app')
