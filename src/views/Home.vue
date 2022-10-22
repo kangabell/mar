@@ -6,12 +6,14 @@
 		<img class="logo" src="@/assets/img/logo.png" alt="Mar" />
 
 		<section class="announcement">
-			<p class="emphasis">
-				{{ announcement.content }}
-			</p>
-			<a v-bind:href="announcement.url" class="link-img" target="_blank">
+			<div class="card">
 				<img v-bind:src="announcement.img" v-bind:alt="announcement.title" />
-			</a>
+				<a v-bind:href="announcement.url" class="link-img" target="_blank">
+					<span class="emphasis">
+						{{ announcement.content }}
+					</span>
+				</a>
+			</div>
 			<blockquote class="quote" v-bind:cite="quote.url">
 				<div class="loading" v-if="!quote.content"></div>
 				<div v-else>
