@@ -277,9 +277,22 @@ blockquote {
   background: $dark;
 }
 
+img {
+	max-width: 100%;
+}
+
 iframe {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+video {
+	width: 100%;
 }
 
 @media only screen and (min-width: 600px) {
@@ -294,6 +307,16 @@ iframe {
 	}
 	nav a + a {
 		margin-left: 1rem;
+	}
+	.flex-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 100%;
+		img {
+			margin-bottom: 1rem;
+			width: 49%;
+		}
 	}
 }
 
